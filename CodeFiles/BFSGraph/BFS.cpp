@@ -2,11 +2,10 @@
 #include "BFS.h"
 
 /**
- * @brief Constructs graph vertices
+ * @brief Construct a new Graph:: Graph object
  * 
- * @param int 
+ * @param V 
  */
-
 Graph::Graph(int V)
 {
     this->V = V;
@@ -14,11 +13,10 @@ Graph::Graph(int V)
 }
 
 /**
- * @brief Add Edge in the graph
+ * @brief Add edge in the graph
  * 
- * @param int
- * @param int
- * @return void
+ * @param v 
+ * @param w 
  */
 void Graph::addEdge(int v, int w)
 {
@@ -26,10 +24,9 @@ void Graph::addEdge(int v, int w)
 }
 
 /**
- * @brief Get number of vertices in the graph
+ * @brief Get Number of vertices in the graph
  * 
- * 
- * @return int
+ * @return int 
  */
 int Graph::getV()
 {
@@ -40,10 +37,11 @@ int Graph::getV()
  * @brief return vector of nodes value of the bfs
  * 
  * 
- * @param int
+ * @param int s
  * @return  vector<int> Array of nodes value
  */
 
+  
 vector<int> Graph::BFS(int s)
 {
     vector<int> out;
