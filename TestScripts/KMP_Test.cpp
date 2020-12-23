@@ -1,3 +1,6 @@
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+#define DOCTEST_CONFIG_SUPER_FAST_ASSERTS
+
 #include "../CodeFiles/KMP/KMP.h"
 #include "../Tool/doctest.h"
 
@@ -53,21 +56,25 @@ TEST_SUITE("Correctness")
         KMP Obj;
         string str = "HelloFromTest4", pattern = "";
         vector<int> EO;
+        SUBCASE("Empty Pattern Test")
+        {
+            vector<int>ActualOutput = Obj.ApplyKMP(str, pattern);
 
-        vector<int>ActualOutput = Obj.ApplyKMP(str, pattern);
+            CHECK_EQ(EO.size(), ActualOutput.size());
 
-        CHECK_EQ(EO.size(), ActualOutput.size());
+            for(int i = 0; i < EO.size(); i++)
+                CHECK_EQ(EO[i], ActualOutput[i]);
+        }
 
-        for(int i = 0; i < EO.size(); i++)
-            CHECK_EQ(EO[i], ActualOutput[i]);
-        
-        ActualOutput = Obj.ApplyKMP(pattern, str);
+        SUBCASE("Empty String Test")
+        {
+            vector<int>ActualOutput = Obj.ApplyKMP(pattern, str);
 
-        CHECK_EQ(EO.size(), ActualOutput.size());
+            CHECK_EQ(EO.size(), ActualOutput.size());
 
-        for(int i = 0; i < EO.size(); i++)
-            CHECK_EQ(EO[i], ActualOutput[i]);
-
+            for(int i = 0; i < EO.size(); i++)
+                CHECK_EQ(EO[i], ActualOutput[i]);
+        }
         cout<<"Empty String Test passed"<<endl;
     }
     TEST_CASE("Pattern Longer Than String Test")
@@ -93,7 +100,7 @@ TEST_SUITE("Performance")
     {
         string str = "", pattern = "a";
         vector<int>EO;
-        for(int i = 0; i < 1e7;i++)
+        for(int i = 0; i < 1e6;i++)
         {
             str += "a";
             EO.push_back(i);

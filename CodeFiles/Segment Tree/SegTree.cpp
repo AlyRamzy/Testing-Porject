@@ -11,7 +11,8 @@ MinSegTree :: MinSegTree(vector<int>arr)
     ArraySize = arr.size();
     seg.resize(4 * ArraySize);
 
-    build(arr, 1, 0, ArraySize-1);
+    if(arr.size())
+        build(arr, 1, 0, ArraySize-1);
 }
 
 /**
@@ -70,6 +71,8 @@ void MinSegTree :: Update(int index, int value, int id, int left, int right)
  */
 void MinSegTree :: Update(int index, int value)
 {
+    if(index < 0 || index >= ArraySize)
+        return;
     Update(index, value, 1, 0, ArraySize-1);
 }
 
@@ -104,5 +107,8 @@ int MinSegTree :: Query(int l, int r, int id, int left, int right)
  */
 int MinSegTree :: GetMin(int left, int right)
 {
+    if(left < 0 || left >= ArraySize || right < 0 || right >= ArraySize || right < left)
+        return Default;
+
     return Query(left, right, 1, 0, ArraySize-1);
 }
