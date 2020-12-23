@@ -15,7 +15,7 @@ public:
     Graph(int V);  // Constructor
  
     // function to add an edge to graph
-    void addEdge(int v, int w); 
+    bool addEdge(int v, int w); 
 
     // function to get No. of vertices
     int getV();

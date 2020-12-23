@@ -18,9 +18,15 @@ Graph::Graph(int V)
  * @param v 
  * @param w 
  */
-void Graph::addEdge(int v, int w)
+bool Graph::addEdge(int v, int w)
 {
-    adj[v].push_back(w); // Add w to v’s list.
+    if(v<this->V && v>=0 && w < this->V && w>=0){
+        adj[v].push_back(w); // Add w to v’s list.
+        return true;
+
+    }
+    return false;
+    
 }
 
 /**
@@ -45,6 +51,10 @@ int Graph::getV()
 vector<int> Graph::BFS(int s)
 {
     vector<int> out;
+    if(s>=this->V || s<0){
+        return out;
+    }
+    
     // Mark all the vertices as not visited
     bool *visited = new bool[V];
     for (int i = 0; i < V; i++)

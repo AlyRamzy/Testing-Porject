@@ -33,7 +33,7 @@ TEST_SUITE("Correctness")
         out = g.BFS(2);
         CHECK(Expected_Output==out);
     }
-    /*TEST_CASE("TEST CASE 1 : starting with node not inside the graph"){
+    TEST_CASE("TEST CASE 1 : starting with node not inside the graph"){
         vector<int> out;
         Graph g(4);
         g.addEdge(0, 1);
@@ -44,9 +44,10 @@ TEST_SUITE("Correctness")
         g.addEdge(3, 3);
 
         
-        CHECK_NOTHROW(g.BFS(4));
+        out  = g.BFS(4);
+        CHECK(out.size()==0);
         
-    }*/
+    }
 
     TEST_CASE("TEST CASE 2 :construct graph with -ve number of nodes"){
 
@@ -54,7 +55,7 @@ TEST_SUITE("Correctness")
         
         CHECK_NOTHROW(Graph g(-1));
     }
-    /*
+    
     TEST_CASE("TEST CASE 3 :Construct Graph with -ve number to search for"){
 
         vector<int> out;
@@ -68,6 +69,7 @@ TEST_SUITE("Correctness")
 
         
         CHECK_NOTHROW(g.BFS(-1));
+        CHECK(g.BFS(-1).size()==0);
         
     }
 
@@ -75,36 +77,36 @@ TEST_SUITE("Correctness")
     TEST_CASE("TEST CASE 4 :Checking edges in the graph"){
         Graph g(4);
         SUBCASE("Add edge between two nodes exists in the graph"){
-            CHECK_NOTHROW(g.addEdge(0,1));
+            CHECK(g.addEdge(0,1)==true);
         }
         SUBCASE("Add edge between two nodes doesnt exist in the graph"){
-            CHECK_NOTHROW(g.addEdge(5,6));
-            CHECK_NOTHROW(g.BFS(1));
+            CHECK(g.addEdge(5,6)==false);
+            
         }
         SUBCASE("Add edge between -ve value as src"){
-            CHECK_NOTHROW(g.addEdge(-1,2));
-            CHECK_NOTHROW(g.BFS(1));
+            CHECK(g.addEdge(-1,2)==false);
+            
         }
         SUBCASE("Add edge between -ve value as dist"){
-            CHECK_NOTHROW(g.addEdge(1,-2));
-            CHECK_NOTHROW(g.BFS(1));
+            CHECK(g.addEdge(1,-2)==false);
+            
 
         }
         SUBCASE("Add edge between src that doesnt not exist and exists dist"){
-            CHECK_NOTHROW(g.addEdge(6,2));
-            CHECK_NOTHROW(g.BFS(1));
+            CHECK(g.addEdge(6,2)==false);
+            
 
         }
         SUBCASE("Add edge between dist that doesnt not exist and exists src"){
-            CHECK_NOTHROW(g.addEdge(2,6));
-            CHECK_NOTHROW(g.BFS(1));
+            CHECK(g.addEdge(2,6)==false);
+            
 
         }
         
         
 
     }
-    */
+    
 
     TEST_CASE("TEST CASE 5 :Checking graph with no edges"){
         Graph g(4);
