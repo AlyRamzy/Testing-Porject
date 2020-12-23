@@ -138,5 +138,27 @@ TEST_SUITE("Correctness")
 }
 
 
+TEST_SUITE("Performance")
+{
+    Graph g (1e7);
+    
+    
+    
+    TEST_CASE("Time Complexity: O(V+E) where V is number of vertices in the graph and E is number of edges in the graph." * doctest::timeout(0.5))
+    {
+        for(int i =0 ; i <1e6; i++){
+            g.addEdge(0,i);
+        }
+        
 
+        vector<int> Actual_Output = g.BFS(0);
+        
+        
+        cout<<"Performance Test Passed"<<endl;
+    }
+
+
+
+
+}
 
