@@ -28,7 +28,7 @@ class Kruskal
 
     public:
     Kruskal(int Nodes_num,vector<edge>edges);
-    int FindMSTValue();
+    long long FindMSTValue();
 };
 
 #endif

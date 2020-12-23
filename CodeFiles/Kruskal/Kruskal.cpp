@@ -54,13 +54,14 @@ void Kruskal :: Union(int x,int y)
 /**
  * @brief Find the weight of the Minimum Spanning tree
  * 
- * @return int 
+ * @return long long
  */
-int Kruskal :: FindMSTValue()
+long long Kruskal :: FindMSTValue()
 {
     sort(edges.begin(), edges.end());
 
-    int MST = 0, TotalSize = 0;
+    long long MST = 0;
+    int TotalSize = 0;
     for(auto e : edges)
     {
         int u = FindSet(e.from);
@@ -74,5 +75,5 @@ int Kruskal :: FindMSTValue()
         }
     }
 
-    return TotalSize == Nodes ? MST : INT_MIN;
+    return TotalSize == Nodes ? MST : LONG_LONG_MIN;
 }

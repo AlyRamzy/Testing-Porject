@@ -14,15 +14,22 @@ int LongestPalindromicSubString :: Solve(string str)
     {
         int l = i, r = i;
         while(l >= 0 && r < str.length() && str[l] == str[r])
+        {
             result = max(result, r - l + 1);
+            l--;
+            r++;
+        }
     }
 
     for(int i = 0; i < str.length() - 1; i++)
     {
         int l = i, r = i + 1;
         while(l >= 0 && r < str.length() && str[l] == str[r])
+        {
             result = max(result, r - l + 1);
+            l--;
+            r++;
+        }
     }
-
     return result;
 }
