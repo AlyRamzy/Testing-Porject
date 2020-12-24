@@ -12,11 +12,15 @@ Graph::Graph(int V)
     adj = new list<int>[V];
 }
 
+
+
 /**
- * @brief Add edge in the graph
+ * @brief 
  * 
  * @param v 
  * @param w 
+ * @return true 
+ * @return false 
  */
 bool Graph::addEdge(int v, int w)
 {

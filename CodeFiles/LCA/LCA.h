@@ -5,14 +5,24 @@
  
 using namespace std;
  
-// A Binary Tree node
+
+/**
+ * @brief A Binary Tree node
+ * 
+ */
 struct Node
 {
     int key;
     struct Node *left, *right;
 };
  
-// Utility function creates a new binary tree node with given key
+
+/**
+ * @brief  Utility function creates a new binary tree node with given key
+ * 
+ * @param key 
+ * @return Node* 
+ */
 Node * newNode(int k)
 {
     Node *temp = new Node;
@@ -21,8 +31,16 @@ Node * newNode(int k)
     return temp;
 }
  
-// Finds the path from root node to given root of the tree, Stores the
-// path in a vector path[], returns true if path exists otherwise false
+
+/**
+ * @brief Finds the path from root node to given root of the tree, Stores the path in a vector path[], returns true if path exists otherwise false
+ * 
+ * @param root 
+ * @param path 
+ * @param key
+ * @return true 
+ * @return false 
+ */
 bool findPath(Node *root, vector<int> &path, int k)
 {
     // base case
@@ -47,8 +65,15 @@ bool findPath(Node *root, vector<int> &path, int k)
     return false;
 }
  
-// Returns LCA if node n1, n2 are present in the given binary tree,
-// otherwise return -1
+
+/**
+ * @brief Returns LCA if node n1, n2 are present in the given binary tree,otherwise return -1
+ * 
+ * @param root 
+ * @param n1 
+ * @param n2 
+ * @return int 
+ */
 int findLCA(Node *root, int n1, int n2)
 {
     // to store paths to n1 and n2 from the root
