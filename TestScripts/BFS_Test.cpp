@@ -2,14 +2,10 @@
 #include "../CodeFiles/BFSGraph/BFS.h"
 #include "../Tool/doctest.h"
 /*
-Proplems : doesnt handle -ve values in constructor and add edge and bfs
-         : doesnt handle values that do not exist in the graph for add edge and bfs
+Proplems : doesnt handle -ve values in constructor 
 
 
 */
-// Program to print BFS traversal from a given
-// source vertex. BFS(int s) traverses vertices 
-// reachable from s.
 
 
 TEST_SUITE("Correctness")
