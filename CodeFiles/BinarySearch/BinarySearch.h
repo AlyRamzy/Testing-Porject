@@ -1,4 +1,4 @@
-/ C++ program to implement recursive Binary Search 
+// C++ program to implement recursive Binary Search 
 #include <bits/stdc++.h> 
 using namespace std; 
   
@@ -9,8 +9,9 @@ int binarySearch(int arr[], int l, int r, int x)
 { 
     while (l <= r) { 
         int m = l + (r - l) / 2; 
-  
+  	
         // Check if x is present at mid 
+	
         if (arr[m] == x) 
             return m; 
   
