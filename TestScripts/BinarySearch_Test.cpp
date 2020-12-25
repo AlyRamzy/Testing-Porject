@@ -93,7 +93,7 @@ TEST_SUITE("Correctness")
 TEST_SUITE("Performance")
 {
 
-        TEST_CASE("Time Complexity: O(logn) where n is the size of the sorted array." * doctest::timeout(0.0001))
+        TEST_CASE("Time Complexity: O(logn) where n is the size of the sorted array." * doctest::timeout(0.005))
         {
                 int arr[int(1e6)];
                 for (int i = 0; i < int(1e6); i++)
