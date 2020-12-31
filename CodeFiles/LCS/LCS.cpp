@@ -37,13 +37,13 @@ int max(int a, int b)
 } 
 
 /* Driver program to test above function */
-// int main() 
-// { 
-// 	char X[] = "AGGTAB"; 
-// 	char Y[] = "GXTXAYB"; 
+int main() 
+{ 
+	char X[] = "abc"; 
+	char Y[] = "cba"; 
 
-// 	int m = strlen(X); 
-// 	int n = strlen(Y); 
-// 	// printf("Length of LCS is %d\n", lcs(X, Y, m, n)); 
-// 	return 0; 
-// } 
+	int m = strlen(X); 
+	int n = strlen(Y); 
+	printf("Length of LCS is %d\n", lcs(X, Y, m, n)); 
+	return 0; 
+} 
