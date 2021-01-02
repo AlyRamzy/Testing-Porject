@@ -70,16 +70,16 @@ vector<Point> convexHull(Point points[], int n)
 } 
   
 // Driver program to test above functions 
-int main() 
-{ 
-    // Point points[] = {{0, 3}, {2, 2}, {1, 1}, {2, 1}, {3, 0}, {0, 0}}; 
-    Point points[] = {{2, 2}, {3, 3}, {0, 3}, {4, 4}};
-    int n = sizeof(points)/sizeof(points[0]); 
-    vector<Point> hull; 
-    hull = convexHull(points, n); 
-    // Print Result 
-    for (int i = 0; i < hull.size(); i++) 
-        cout << "(" << hull[i].x << ", " << hull[i].y << ")\n"; 
+// int main() 
+// { 
+//     // Point points[] = {{0, 3}, {2, 2}, {1, 1}, {2, 1}, {3, 0}, {0, 0}}; 
+//     Point points[] = {{2, 2}, {3, 3}, {0, 3}, {4, 4}};
+//     int n = sizeof(points)/sizeof(points[0]); 
+//     vector<Point> hull; 
+//     hull = convexHull(points, n); 
+//     // Print Result 
+//     for (int i = 0; i < hull.size(); i++) 
+//         cout << "(" << hull[i].x << ", " << hull[i].y << ")\n"; 
 
-    return 0; 
-} 
+//     return 0; 
+// } 
