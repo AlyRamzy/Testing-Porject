@@ -93,8 +93,8 @@ TEST_SUITE("Performance")
 
     TEST_CASE("Time Complexity: O(nm) where n and m is the size of the two similar arrays." * doctest::timeout(0.3))
     {
-        int arr1[char(1e7)];
-        int arr2[char(1e7)];
+        char arr1[int(1e7)];
+        char arr2[int(1e7)];
         int j;
         for (int i = 0; i < int(1e7); i++)
         {
@@ -109,8 +109,8 @@ TEST_SUITE("Performance")
 
     TEST_CASE("Time Complexity: O(nm) where n and m is the size of the tow unsimilar arrays." * doctest::timeout(0.3))
     {
-        int arr1[char(1e7)];
-        int arr2[char(1e7)];
+        char arr1[int(1e7)];
+        char arr2[int(1e7)];
         int j, k;
         for (int i = 0; i < int(1e7); i++)
         {
