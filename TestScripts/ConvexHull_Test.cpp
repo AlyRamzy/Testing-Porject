@@ -34,14 +34,15 @@ TEST_SUITE("Correctness")
         hull = convexHull(points, n); 
         vector<Point> convex_hull;
 
-        Point p1 = {2, 2};
-        Point p2 = {1, 3};
+        Point p1 = {1, 3};
+        Point p2 = {2, 2};
         Point p3 = {3, 3};
 
         convex_hull.push_back(p1);
         convex_hull.push_back(p2);
         convex_hull.push_back(p3);
 
+        // CHECK(hull.size() == convex_hull.size());
         for (int i = 0; i < n; ++i)
         {
             CHECK(hull[i].x == convex_hull[i].x);
@@ -68,7 +69,11 @@ TEST_SUITE("Correctness")
             vector<Point> hull; 
             hull = convexHull(points, n); 
 
-            //check this is ==
+            for (int i = 0; i < n; ++i)
+            {
+                CHECK(hull[i].x == convex_hull[i].x);
+                CHECK(hull[i].y == convex_hull[i].y);
+            }
         }
 
         Point p4 = {4, 4};
@@ -81,12 +86,56 @@ TEST_SUITE("Correctness")
             vector<Point> hull; 
             hull = convexHull(points, n); 
 
-            //check this is ==
+            for (int i = 0; i < n; ++i)
+            {
+                CHECK(hull[i].x == convex_hull[i].x);
+                CHECK(hull[i].y == convex_hull[i].y);
+            }
         }
+    }
 
-        
+    TEST_CASE("Negative points")
+    {
+        vector<Point> convex_hull;
+        Point p1 = {-3, 0};
+        Point p2 = {0, -3};
+        Point p3 = {3, 0};
+        Point p4 = {0, 3};
 
+        convex_hull.push_back(p1);
+        convex_hull.push_back(p2);
+        convex_hull.push_back(p3);
+        convex_hull.push_back(p4);
 
+        SUBCASE("Four points")
+        {
+            Point points[] = {{1, 1}, {-3, 0}, {1, 0}, {0, 1}, {0, -3}, {0, 3}, {-1, 1}, {-1, -1}, {0, -1}, {3, 0}};
+            int n = sizeof(points)/sizeof(points[0]); 
+            vector<Point> hull; 
+            hull = convexHull(points, n); 
+
+            for (int i = 0; i < n; ++i)
+            {
+                CHECK(hull[i].x == convex_hull[i].x);
+                CHECK(hull[i].y == convex_hull[i].y);
+            }
+        }
+        Point p5 = {-3, 3};
+        convex_hull.push_back(p5);
+
+        SUBCASE("Five points")
+        {
+            Point points[] = {{1, 1}, {-3, 0}, {1, 0}, {0, 1}, {0, -3}, {0, 3}, {-3, 3}, {-2, 2}, {-1, 1}, {-1, -1}, {0, -1}, {3, 0}};
+            int n = sizeof(points)/sizeof(points[0]); 
+            vector<Point> hull; 
+            hull = convexHull(points, n); 
+
+            for (int i = 0; i < n; ++i)
+            {
+                CHECK(hull[i].x == convex_hull[i].x);
+                CHECK(hull[i].y == convex_hull[i].y);
+            }
+        }
     }
     
 }
