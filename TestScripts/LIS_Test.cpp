@@ -95,7 +95,7 @@ TEST_SUITE("Performance")
             arr[i] == i;
         }
         int arr_size = sizeof(arr) / sizeof(arr[0]);
-        quickSort(arr, 0, arr_size - 1);
+        lis(arr, arr_size);
     }
 
     TEST_CASE("Time Complexity: O(e^n) where n is the size of the reversed sorted array." * doctest::timeout(0.4))
@@ -106,7 +106,7 @@ TEST_SUITE("Performance")
             arr[i] == i;
         }
         int arr_size = sizeof(arr) / sizeof(arr[0]);
-        quickSort(arr, 0, arr_size - 1);
+        lis(arr, arr_size);
     }
 
     TEST_CASE("Time Complexity: O(e^n) where n is the size of the unsorted array." * doctest::timeout(0.4))
@@ -117,6 +117,6 @@ TEST_SUITE("Performance")
             arr[i] == rand();
         }
         int arr_size = sizeof(arr) / sizeof(arr[0]);
-        quickSort(arr, 0, arr_size - 1);
+        lis(arr, arr_size);
     }
 }
