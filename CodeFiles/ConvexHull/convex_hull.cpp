@@ -73,7 +73,10 @@ vector<Point> convexHull(Point points[], int n)
 int main() 
 { 
     // Point points[] = {{0, 3}, {2, 2}, {1, 1}, {2, 1}, {3, 0}, {0, 0}}; 
-    Point points[] = {{2, 2}, {3, 3}, {-1, 3}, {4, 4}};
+    // Point points[] = {{1, 1}, {2, 2}, {3, 3}, {4, 4}};
+    // Point points[] = {{0, 0}, {0, 3}, {2, 2}, {1, 1}, {2, 1}, {4, 2}, {3, 0}}; 
+    Point points[] = {{1, 1}, {-3, 0}, {1, 0}, {0, 1}, {0, -3}, {0, 3}, {-1, 1}, {-1, -1}, {0, -1}, {3, 0}};
+
     int n = sizeof(points)/sizeof(points[0]); 
     vector<Point> hull; 
     hull = convexHull(points, n); 
