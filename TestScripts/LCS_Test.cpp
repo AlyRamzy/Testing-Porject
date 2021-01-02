@@ -88,7 +88,40 @@ TEST_SUITE("Correctness")
 
 }
 
-// TEST_SUITE("Performance")
-// {
+TEST_SUITE("Performance")
+{
 
-// }
+    TEST_CASE("Time Complexity: O(nm) where n and m is the size of the two similar arrays." * doctest::timeout(0.3))
+    {
+        int arr1[char(1e7)];
+        int arr2[char(1e7)];
+        int j;
+        for (int i = 0; i < int(1e7); i++)
+        {
+            j = i%10;
+            arr1[i] == char(j);
+            arr2[i] == char(j);
+        }
+        int arr1_size = strlen(arr1);
+        int arr2_size = strlen(arr2);
+        lcs(arr1, arr2, arr1_size, arr2_size);
+    }
+
+    TEST_CASE("Time Complexity: O(nm) where n and m is the size of the tow unsimilar arrays." * doctest::timeout(0.3))
+    {
+        int arr1[char(1e7)];
+        int arr2[char(1e7)];
+        int j, k;
+        for (int i = 0; i < int(1e7); i++)
+        {
+            j = rand()%10;
+            k = rand()%10;
+            arr1[i] == char(j);
+            arr2[i] == char(k);
+        }
+        int arr1_size = strlen(arr1);
+        int arr2_size = strlen(arr2);
+        lcs(arr1, arr2, arr1_size, arr2_size);
+    }
+}
+
