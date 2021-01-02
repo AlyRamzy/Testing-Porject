@@ -104,7 +104,7 @@ TEST_SUITE("Performance")
         }
         int arr1_size = strlen(arr1);
         int arr2_size = strlen(arr2);
-        lcs(arr1, arr2, arr1_size, arr2_size);
+        int n = lcs(arr1, arr2, arr1_size, arr2_size);
     }
 
     TEST_CASE("Time Complexity: O(nm) where n and m is the size of the tow unsimilar arrays." * doctest::timeout(0.3))
@@ -121,7 +121,7 @@ TEST_SUITE("Performance")
         }
         int arr1_size = strlen(arr1);
         int arr2_size = strlen(arr2);
-        lcs(arr1, arr2, arr1_size, arr2_size);
+        int n = lcs(arr1, arr2, arr1_size, arr2_size);
     }
 }
 
