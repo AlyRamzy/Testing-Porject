@@ -141,10 +141,25 @@ TEST_SUITE("Correctness")
 }
 
 
+TEST_SUITE("Performance")
+{
 
-// TEST_SUITE("Performance")
-// {
-    
-// }
+    TEST_CASE("Time Complexity: O(n^2) where n is the number of points." * doctest::timeout(1.2))
+    {
+        Point arr[int(1e4)];
+        Point p;
+        for (int i = 0; i < int(1e4); i++)
+        {
+            p.x=rand();
+            p.y=rand();
+            arr[i] == p;
+        }
+        int arr_size = sizeof(arr) / sizeof(arr[0]);
+        vector<Point> hull; 
+        hull = convexHull(arr, arr_size); 
+    }
+
+}
+
 
 
