@@ -1,3 +1,6 @@
+#ifndef __LCS
+#define __LCS
+
 /* Dynamic Programming C/C++ implementation of LCS problem */
 #include <bits/stdc++.h> 
 
@@ -35,15 +38,5 @@ int max(int a, int b)
 { 
 	return (a > b) ? a : b; 
 } 
+#endif
 
-/* Driver program to test above function */
-// int main() 
-// { 
-// 	char X[] = "AGGTAB"; 
-// 	char Y[] = "GXTXAYB"; 
-
-// 	int m = strlen(X); 
-// 	int n = strlen(Y); 
-// 	// printf("Length of LCS is %d\n", lcs(X, Y, m, n)); 
-// 	return 0; 
-// } 

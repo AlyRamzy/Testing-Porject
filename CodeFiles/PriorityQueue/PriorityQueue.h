@@ -1,4 +1,5 @@
-#pragma once
+#ifndef __PRIORITY_QUEUE
+#define __PRIORITY_QUEUE
 #include <cstdio>
 
 #include <cstring>
@@ -21,7 +22,6 @@ struct node
     struct node* link;
 
 };
-
 
 /*
 
@@ -222,3 +222,5 @@ public:
     }
 
 };
+
+#endif

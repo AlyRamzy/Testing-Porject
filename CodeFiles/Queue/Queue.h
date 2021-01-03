@@ -1,4 +1,6 @@
-#pragma once
+#ifndef __QUEUE
+#define __QUEUE
+
 #define MAX_SIZE 100000
 using namespace std;
 class Queue {
@@ -58,3 +60,4 @@ public:
     }
 
 };
+#endif

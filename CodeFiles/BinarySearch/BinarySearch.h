@@ -1,3 +1,5 @@
+#ifndef __BINARY_SEARCH
+#define __BINARY_SEARCH
 // C++ program to implement recursive Binary Search
 #include <bits/stdc++.h>
 using namespace std;
@@ -29,3 +31,4 @@ int binarySearch(int arr[], int l, int r, int x)
     // not present
     return -1;
 }
+#endif

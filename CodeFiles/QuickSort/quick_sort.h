@@ -1,4 +1,5 @@
-
+#ifndef __QUICK_SORT
+#define __QUICK_SORT
 /* C++ implementation of QuickSort */
 #include <bits/stdc++.h> 
 using namespace std; 
@@ -61,16 +62,4 @@ void printArray(int arr[], int size)
 		cout << arr[i] << " "; 
 	cout << endl; 
 } 
-
-// Driver Code 
-// int main() 
-// { 
-// 	int arr[] = { }; 
-// 	int n = sizeof(arr) / sizeof(arr[0]); 
-// 	quickSort(arr, 0, n - 1); 
-// 	cout << "Sorted array: \n"; 
-// 	printArray(arr, n); 
-// 	return 0; 
-// } 
-
-// This code is contributed by rathbhupendra 
+#endif

@@ -1,4 +1,5 @@
-
+#ifndef __MINMAX
+#define __MINMAX
 // A simple C++ program to find 
 // maximum score that 
 // maximizing player can get. 
@@ -65,3 +66,4 @@ int minimax_interface(vector<int> values) {
 
 }
 
+#endif

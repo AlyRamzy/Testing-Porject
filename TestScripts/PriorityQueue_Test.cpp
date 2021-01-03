@@ -1,6 +1,4 @@
-#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
-//#include "doctest.h"
-//#include"PriorityQueue.h"
+#define DOCTEST_CONFIG_IMPLEMENTATION_IN_DLL
 #include "../CodeFiles/PriorityQueue/PriorityQueue.h"
 #include "../Tool/doctest.h"
 TEST_SUITE("Correctness")

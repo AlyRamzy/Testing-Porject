@@ -1,4 +1,4 @@
-#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+#define DOCTEST_CONFIG_IMPLEMENTATION_IN_DLL
 #define DOCTEST_CONFIG_SUPER_FAST_ASSERTS
 
 #include "../CodeFiles/Palindromic Substrings/LongestPalindromicSubString.h"

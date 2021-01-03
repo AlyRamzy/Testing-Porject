@@ -1,3 +1,5 @@
+#ifndef __DIJKSTRA
+#define __DIJKSTRA
 // C / C++ program for Dijkstra's
 // shortest path algorithm for adjacency
 // list representation of graph
@@ -98,7 +100,6 @@ struct MinHeapNode
 // Structure to represent a min heap
 struct MinHeap
 {
-
     // Number of heap nodes present currently
     int size;
 
@@ -290,15 +291,15 @@ int *dijkstra(struct Graph *graph, int src)
     for (int v = 0; v < V; ++v)
     {
         dist[v] = INT_MAX;
-        minHeap->array[v] = newMinHeapNode(v,
-                                           dist[v]);
+        minHeap->array[v] = newMinHeapNode(v, dist[v]);
         minHeap->pos[v] = v;
     }
-
+    if(src >= V)
+        return dist;
+        
     // Make dist value of src vertex
     // as 0 so that it is extracted first
-    minHeap->array[src] =
-        newMinHeapNode(src, dist[src]);
+    minHeap->array[src] = newMinHeapNode(src, dist[src]);
     minHeap->pos[src] = src;
     dist[src] = 0;
     decreaseKey(minHeap, src, dist[src]);
@@ -314,8 +315,7 @@ int *dijkstra(struct Graph *graph, int src)
     {
         // Extract the vertex with
         // minimum distance value
-        struct MinHeapNode *minHeapNode =
-            extractMin(minHeap);
+        struct MinHeapNode *minHeapNode = extractMin(minHeap);
 
         // Store the extracted vertex number
         int u = minHeapNode->v;
@@ -351,3 +351,4 @@ int *dijkstra(struct Graph *graph, int src)
     // print the calculated shortest distances
     return dist;
 }
+#endif

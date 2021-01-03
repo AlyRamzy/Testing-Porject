@@ -1,4 +1,6 @@
-#pragma once
+#ifndef __INSERTION_SORT
+#define __INSERTION_SORT
+
 void insertionSort(int arr[], int n)
 {
     int i, key, j;
@@ -18,3 +20,4 @@ void insertionSort(int arr[], int n)
         arr[j + 1] = key;
     }
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef __STACK
+#define __STACK
 // C++ program for linked list implementation of stack
 #include <bits/stdc++.h>
 using namespace std;
@@ -10,7 +12,7 @@ public:
     StackNode *next;
 };
 
-StackNode *newNode(int data)
+StackNode *NewNode(int data)
 {
     StackNode *stackNode = new StackNode();
     stackNode->data = data;
@@ -25,7 +27,7 @@ int isEmpty(StackNode *root)
 
 void push(StackNode **root, int data)
 {
-    StackNode *stackNode = newNode(data);
+    StackNode *stackNode = NewNode(data);
     stackNode->next = *root;
     *root = stackNode;
 }
@@ -54,3 +56,4 @@ int peek(StackNode *root)
     }
     return root->data;
 }
+#endif

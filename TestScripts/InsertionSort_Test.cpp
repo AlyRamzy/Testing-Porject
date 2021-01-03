@@ -1,6 +1,9 @@
-#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+#define DOCTEST_CONFIG_IMPLEMENTATION_IN_DLL
+
 #include "../CodeFiles/InsertionSort/insertionSort.h"
 #include "../Tool/doctest.h"
+#include <stdlib.h>     
+
 TEST_SUITE("Correctness")
 {
     TEST_CASE("Sort array  with reversed order")
@@ -30,8 +33,8 @@ TEST_SUITE("Correctness")
     }
     TEST_CASE("Sort null pointer array")
     {
-        int* arr = NULL;
-        int arr_size = sizeof(arr) / sizeof(arr[0]);
+        int* arr = nullptr;
+        int arr_size = 0;
         CHECK_NOTHROW(insertionSort(arr, arr_size));
     }
     TEST_CASE("Sort already sorted array")

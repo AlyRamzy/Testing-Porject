@@ -1,3 +1,5 @@
+#ifndef __MERGE_SORT
+#define __MERGE_SORT
 // C++ program for Merge Sort
 #include <iostream>
 using namespace std;
@@ -75,3 +77,4 @@ void mergeSort(int arr[], int l, int r)
     mergeSort(arr, m + 1, r);
     merge(arr, l, m, r);
 }
+#endif

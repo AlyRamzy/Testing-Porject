@@ -9,6 +9,12 @@
  */
 Kruskal :: Kruskal(int n, vector<edge> edges)
 {
+    if(n <= 0)
+    {
+        n = 0;
+        edges.clear();
+    }
+    
     Nodes = n;
     this->edges = edges;
 

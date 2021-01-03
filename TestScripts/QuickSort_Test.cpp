@@ -1,4 +1,4 @@
-#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+#define DOCTEST_CONFIG_IMPLEMENTATION_IN_DLL
 #include "../CodeFiles/QuickSort/quick_sort.h"
 #include "../Tool/doctest.h"
 #include <stdlib.h>
@@ -138,36 +138,36 @@ TEST_SUITE("Correctness")
 TEST_SUITE("Performance")
 {
 
-	TEST_CASE("Time Complexity: O(n^2) where n is the size of the sorted array." * doctest::timeout(1.2))
+	TEST_CASE("Time Complexity: O(n^2) where n is the size of the sorted array." * doctest::timeout(0.2))
+	{
+		int arr[int(1e3)];
+		for (int i = 0; i < int(1e3); i++)
+		{
+			arr[i] = i;
+		}
+		int arr_size = 1e3;
+		quickSort(arr, 0, arr_size - 1);
+	}
+
+	TEST_CASE("Time Complexity: O(n^2) where n is the size of the reversed sorted array." * doctest::timeout(0.2))
+	{
+		int arr[int(1e3)];
+		for (int i = int(1e3) - 1; i >= 0; i--)
+		{
+			arr[i] = i;
+		}
+		int arr_size = 1e3;
+		quickSort(arr, 0, arr_size - 1);
+	}
+
+	TEST_CASE("Time Complexity: O(nlogn) where n is the size of the unsorted array." * doctest::timeout(0.5))
 	{
 		int arr[int(1e4)];
 		for (int i = 0; i < int(1e4); i++)
 		{
-			arr[i] == i;
+			arr[i] = rand();
 		}
-		int arr_size = sizeof(arr) / sizeof(arr[0]);
-		quickSort(arr, 0, arr_size - 1);
-	}
-
-	TEST_CASE("Time Complexity: O(n^2) where n is the size of the reversed sorted array." * doctest::timeout(1.2))
-	{
-		int arr[int(1e4)];
-		for (int i = int(1e4) - 1; i >= 0; i--)
-		{
-			arr[i] == i;
-		}
-		int arr_size = sizeof(arr) / sizeof(arr[0]);
-		quickSort(arr, 0, arr_size - 1);
-	}
-
-	TEST_CASE("Time Complexity: O(nlogn) where n is the size of the unsorted array." * doctest::timeout(0.2))
-	{
-		int arr[int(1e6)];
-		for (int i = 0; i < int(1e6); i++)
-		{
-			arr[i] == rand();
-		}
-		int arr_size = sizeof(arr) / sizeof(arr[0]);
+		int arr_size = 1e4;
 		quickSort(arr, 0, arr_size - 1);
 	}
 }

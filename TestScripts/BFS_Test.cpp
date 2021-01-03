@@ -1,4 +1,5 @@
-#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+#define DOCTEST_CONFIG_IMPLEMENTATION_IN_DLL
+
 #include "../CodeFiles/BFSGraph/BFS.h"
 #include "../Tool/doctest.h"
 /*

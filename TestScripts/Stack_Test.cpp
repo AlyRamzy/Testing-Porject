@@ -1,4 +1,4 @@
-#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+#define DOCTEST_CONFIG_IMPLEMENTATION_IN_DLL
 #include "../CodeFiles/Stack/Stack.h"
 #include "../Tool/doctest.h"
 #include <iostream>

@@ -1,3 +1,5 @@
+#ifndef __LCA
+#define __LCA
 // C++ Program for Lowest Common Ancestor in a Binary Tree
 // A O(n) solution to find LCA of two given values n1 and n2
 #include <iostream>
@@ -91,3 +93,4 @@ int findLCA(Node *root, int n1, int n2)
             break;
     return path1[i-1];
 }
+#endif

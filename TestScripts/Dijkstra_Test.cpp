@@ -1,6 +1,5 @@
+#define DOCTEST_CONFIG_IMPLEMENTATION_IN_DLL
 
-
-#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "../CodeFiles/Dijkstra/Dijkstra.h"
 #include "../Tool/doctest.h"
 #include <iostream>
@@ -55,7 +54,7 @@ TEST_SUITE("Correctness")
             CHECK_EQ(dis[i], minDistances[i]);
         }
     }
-
+    
     TEST_CASE("Min Distance from node not connected to  the graph")
     {
         int V = 10;
@@ -82,7 +81,7 @@ TEST_SUITE("Correctness")
             CHECK_EQ(dis[i], INT_MAX);
         }
     }
-
+    
     TEST_CASE("Min Distance from node connected to part of the graph")
     {
         int V = 9;
@@ -111,9 +110,9 @@ TEST_SUITE("Correctness")
         int V = 10;
         struct Graph *graph = createGraph(V);
 
-        int *dis = dijkstra(graph, 10);
+        int *dis = dijkstra(graph, 0);
 
-        for (int i = 0; i < 10; i++)
+        for (int i = 1; i < 10; i++)
         {
             CHECK_EQ(dis[i], INT_MAX);
         }

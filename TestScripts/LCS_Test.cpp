@@ -1,5 +1,4 @@
-
-#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+#define DOCTEST_CONFIG_IMPLEMENTATION_IN_DLL
 #include "../CodeFiles/LCS/LCS.h"
 #include "../Tool/doctest.h"
 #include <iostream>
@@ -93,10 +92,10 @@ TEST_SUITE("Performance")
 
     TEST_CASE("Time Complexity: O(nm) where n and m is the size of the two similar arrays." * doctest::timeout(0.3))
     {
-        char arr1[int(1e7)];
-        char arr2[int(1e7)];
+        char arr1[int(1e3)];
+        char arr2[int(1e3)];
         int j;
-        for (int i = 0; i < int(1e7); i++)
+        for (int i = 0; i < int(1e3); i++)
         {
             j = i%10;
             arr1[i] == char(j);
@@ -109,10 +108,10 @@ TEST_SUITE("Performance")
 
     TEST_CASE("Time Complexity: O(nm) where n and m is the size of the tow unsimilar arrays." * doctest::timeout(0.3))
     {
-        char arr1[int(1e7)];
-        char arr2[int(1e7)];
+        char arr1[int(1e3)];
+        char arr2[int(1e3)];
         int j, k;
-        for (int i = 0; i < int(1e7); i++)
+        for (int i = 0; i < int(1e3); i++)
         {
             j = rand()%10;
             k = rand()%10;
