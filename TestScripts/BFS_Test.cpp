@@ -7,12 +7,16 @@ Proplems : doesnt handle -ve values in constructor
 
 
 */
-
+void doChecks(int actual,int expected) {
+    REQUIRE_EQ(actual,expected);
+    
+}
 
 TEST_SUITE("Correctness")
 {
+
     TEST_CASE("TEST CASE 0 :Main success scenario") {
-        vector<int> out;
+        vector<int> Actual_Output;
         Graph g(4);
         g.addEdge(0, 1);
         g.addEdge(0, 2);
@@ -27,8 +31,15 @@ TEST_SUITE("Correctness")
         Expected_Output.push_back(0);
         Expected_Output.push_back(3);
         Expected_Output.push_back(1);
-        out = g.BFS(2);
-        CHECK(Expected_Output==out);
+        Actual_Output = g.BFS(2);
+
+        REQUIRE_EQ(Actual_Output.size(),Expected_Output.size());
+
+        for(int i =0 ;i<Actual_Output.size();i++) {
+            CAPTURE(Actual_Output[i]);
+            CAPTURE(Expected_Output[i]); 
+            doChecks(Actual_Output[i],Expected_Output[i]);
+         }
     }
     TEST_CASE("TEST CASE 1 : starting with node not inside the graph"){
         vector<int> out;
@@ -143,17 +154,21 @@ TEST_SUITE("Performance")
     
     
     
-    TEST_CASE("Time Complexity: O(V+E) where V is number of vertices in the graph and E is number of edges in the graph." * doctest::timeout(0.5))
+    TEST_CASE("Time Complexity: O(V+E) where V is number of vertices in the graph and E is number of edges in the graph." * doctest::timeout(0.7))
     {
+        vector<int> Expected_Output ;
         for(int i =0 ; i <1e6; i++){
             g.addEdge(0,i);
+            Expected_Output.push_back(i);
         }
         
 
         vector<int> Actual_Output = g.BFS(0);
+        REQUIRE(Actual_Output==Expected_Output);
+       
         
         
-        cout<<"Performance Test Passed"<<endl;
+        cout<<"Performance Test Passed For BFS"<<endl;
     }
 
 
