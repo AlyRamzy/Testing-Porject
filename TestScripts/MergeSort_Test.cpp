@@ -1,4 +1,5 @@
 #define DOCTEST_CONFIG_IMPLEMENTATION_IN_DLL
+//#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "../CodeFiles/MergeSort/MergeSort.h"
 #include "../Tool/doctest.h"
 #include <stdlib.h>
@@ -37,9 +38,12 @@ TEST_SUITE("Correctness")
 		int arr_size = sizeof(arr) / sizeof(arr[0]);
 
 		mergeSort(arr, 0, arr_size - 1);
-		int sortedArr[] = {4, 6, 10, 12, 15, 23, 28, 35};
+		int sortedArr[] ={4, 6, 10, 12, 15, 23, 28, 35};//{4, 5, 10, 3, 15, 23, 28, 35}; 
+		INFO("Failur in sort already sorted array");
 		for (int i = 0; i < arr_size; i++)
 		{
+			INFO("Failur in sort already sorted array", i);
+			CAPTURE(i);
 			CHECK(sortedArr[i] == arr[i]);
 		}
 	}
@@ -52,6 +56,7 @@ TEST_SUITE("Correctness")
 		int sortedArr[] = {4, 6, 10, 12, 15, 23, 35};
 		for (int i = 0; i < arr_size; i++)
 		{
+			MESSAGE("passed another iteration of the loop");
 			CHECK(sortedArr[i] == arr[i]);
 		}
 	}
@@ -65,6 +70,8 @@ TEST_SUITE("Correctness")
 		int sortedArr[] = {4, 6, 10, 12, 15, 23, 28, 35};
 		for (int i = 0; i < arr_size; i++)
 		{
+			//FAIL("fail the test case and also end it");
+    			//MESSAGE("never reached...");
 			CHECK(sortedArr[i] == arr[i]);
 		}
 	}
@@ -78,6 +85,8 @@ TEST_SUITE("Correctness")
 		int sortedArr[] = {12};
 		for (int i = 0; i < arr_size; i++)
 		{
+			//FAIL_CHECK("this should not end the test case, but mark it as failing");
+    			//MESSAGE("reached!");
 			CHECK(sortedArr[i] == arr[i]);
 		}
 	}
@@ -91,6 +100,7 @@ TEST_SUITE("Correctness")
 		int sortedArr[] = {4, 12};
 		for (int i = 0; i < arr_size; i++)
 		{
+			
 			CHECK(sortedArr[i] == arr[i]);
 		}
 	}
