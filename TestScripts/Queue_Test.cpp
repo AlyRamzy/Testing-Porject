@@ -4,48 +4,31 @@
 
 TEST_SUITE("Correctness")
 {
-    TEST_CASE("isFull")
-    {
-        Queue myq;
 
-        SUBCASE("isFull is false when contain no element")
-        {
-            CHECK(!myq.isFull() == true);
-        }
-        myq.enQueue(10);
-        SUBCASE("isFull is false when contain only one element")
-        {
-            CHECK(!myq.isFull() == true);
-        }
-        for (int i = 1; i < MAX_SIZE; i++)
-            myq.enQueue(10);
-        SUBCASE("isFull is true when contain max elements")
-        {
-            CHECK(myq.isFull() == true);
-        }
-        for (int i = 0; i < MAX_SIZE; i++)
-            myq.deQueue();
-    }
-    TEST_CASE("isEmpty")
-    {
-        Queue myq;
 
-        SUBCASE("isEmpty is true when contain no element")
-        {
+    SCENARIO("isEmpty") {
+        GIVEN("An empty queue") {
+            Queue myq;
             CHECK(myq.isEmpty() == true);
-        }
-        myq.enQueue(10);
-        SUBCASE("isEmpty is false when contain only one element")
-        {
-            CHECK(!myq.isEmpty() == true);
-        }
-        myq.deQueue();
-        SUBCASE("isFull is true again when the only elemnent is deleted")
-        {
-            CHECK(myq.isEmpty() == true);
-        }
 
+            WHEN("the size is increased") {
+                myq.enQueue(10);
+                THEN("Queue is not empty!") {
+                    CHECK(!myq.isEmpty() == true);
+                }
+            }
+
+            AND_WHEN("the size is reduced") {
+                myq.deQueue();
+
+                THEN("Queue is empty again") {
+                    CHECK(myq.isEmpty() == true);
+                }
+            }
+        }
     }
+
+
     TEST_CASE("Enqueue")
     {
         Queue myq;
@@ -101,21 +84,44 @@ TEST_SUITE("Correctness")
 
 
     }
+
+}
+
+TEST_CASE_FIXTURE(Queue, "Check isFull() in Queue class") {
+
+
+
+    SUBCASE("isFull is false when contain no element")
+    {
+        CHECK(!isFull() == true);
+    }
+    enQueue(10);
+    SUBCASE("isFull is false when contain only one element")
+    {
+        CHECK(!isFull() == true);
+    }
+    for (int i = 1; i < MAX_SIZE; i++)
+        enQueue(10);
+    SUBCASE("isFull is true when contain max elements")
+    {
+        CHECK(isFull() == true);
+    }
+    for (int i = 0; i < MAX_SIZE; i++)
+        deQueue();
 }
 
 
 
-TEST_SUITE("Performance")
-{
-    TEST_CASE("Time Complexity: O(n) where n is the number of elements to push in the queue." * doctest::timeout(1 / 1000))
-    {
 
-        Queue myq;
-        for (int i = 0; i < 1e5; i++)
-        {
-            myq.enQueue(i);
-        }
+TEST_SUITE_BEGIN("Performance");
+
+TEST_CASE("Time Complexity: O(n) where n is the number of elements to push in the queue." * doctest::timeout(1 / 1000))
+{
+
+    Queue myq;
+    for (int i = 0; i < 1e5; i++)
+    {
+        myq.enQueue(i);
     }
 }
-
-
+TEST_SUITE_END();
