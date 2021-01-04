@@ -1,8 +1,8 @@
-#ifndef __QUEUE
-#define __QUEUE
-
+#pragma once
 #define MAX_SIZE 100000
 using namespace std;
+#include"doctest.h"
+
 class Queue {
 private:
     int myqueue[MAX_SIZE], front, rear;
@@ -27,7 +27,8 @@ public:
 
     void enQueue(int value) {
         if (isFull()) {
-
+            if (doctest::is_running_in_test)
+                CHECK(rear == MAX_SIZE - 1);
         }
         else {
             if (front == -1) front = 0;
@@ -38,6 +39,7 @@ public:
     int deQueue() {
         int value;
         if (isEmpty()) {
+
             return(-1);
         }
         else {
@@ -55,9 +57,9 @@ public:
     int getRear() { return rear; }
     int getFront() { return front; }
     int getFirst() { return myqueue[front]; }
-    int getLast() {
+    int getLast()
+    {
         return myqueue[rear];
     }
 
 };
-#endif
