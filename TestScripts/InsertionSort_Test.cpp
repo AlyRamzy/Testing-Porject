@@ -99,6 +99,8 @@ TEST_SUITE("Performance")
         }
         int arr_size = sizeof(arr) / sizeof(arr[0]);
         insertionSort(arr, arr_size - 1);
+
+        MESSAGE("Insertion sort O(n) performance test passed");
     }
 
     TEST_CASE("Time Complexity: O(n^2) where n is the size of the reversed sorted array." * doctest::timeout(1 / 10000))
@@ -110,6 +112,8 @@ TEST_SUITE("Performance")
         }
         int arr_size = sizeof(arr) / sizeof(arr[0]);
         insertionSort(arr, arr_size);
+
+        MESSAGE("Insertion sort O(n^2) performance test passed");
     }
 
     TEST_CASE("Time Complexity: O(n^2) where n is the size of the unsorted array." * doctest::timeout(1 / 10000))
@@ -121,6 +125,8 @@ TEST_SUITE("Performance")
         }
         int arr_size = sizeof(arr) / sizeof(arr[0]);
         insertionSort(arr, arr_size - 1);
+
+        MESSAGE("Insertion sort O(n^2) performance test passed");
     }
 }
 

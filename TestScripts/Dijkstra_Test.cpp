@@ -8,7 +8,6 @@ using namespace std;
 
 TEST_SUITE("Correctness")
 {
-
     TEST_CASE("Distance from node in graph with 9 vertices")
     {
         int V = 9;
@@ -134,5 +133,6 @@ TEST_SUITE("Performance")
             addEdge(graph, i, i + 2, rand());
         }
         dijkstra(graph, 0);
+        MESSAGE("Dijkstra performance test passed");
     }
 }

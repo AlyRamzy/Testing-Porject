@@ -162,22 +162,12 @@ public:
 
         node* tmp;
 
-        if (front == NULL)
-
-            cout << "Queue Underflow\n";
-
-        else
-
-        {
-
+        if (front != NULL){
             tmp = front;
-
-            cout << "Deleted item is: " << tmp->info << endl;
 
             front = front->link;
 
             free(tmp);
-
         }
 
     }
@@ -196,31 +186,14 @@ public:
 
         ptr = front;
 
-        if (front == NULL)
-
-            cout << "Queue is empty\n";
-
-        else
-
+        if (front != NULL)
         {
-            cout << "Queue is :\n";
-
-            cout << "Priority       Item\n";
-
             while (ptr != NULL)
-
             {
-
-                cout << ptr->priority << "                 " << ptr->info << endl;
-
                 ptr = ptr->link;
-
             }
-
         }
-
     }
-
 };
 
 #endif

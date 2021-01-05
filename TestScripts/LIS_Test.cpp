@@ -79,13 +79,10 @@ TEST_SUITE("Correctness")
 
         CHECK(lis(arr, n)==6);
     }
-
-
 }
 
 TEST_SUITE("Performance")
 {
-
     TEST_CASE("Time Complexity: O(e^n) where n is the size of the sorted array." * doctest::timeout(0.4))
     {
         int arr[int(17)];
@@ -95,9 +92,11 @@ TEST_SUITE("Performance")
         }
         int arr_size = sizeof(arr) / sizeof(arr[0]);
         int n = lis(arr, arr_size);
+
+        MESSAGE("LIS Performance Test Passed");
     }
 
-    TEST_CASE("Time Complexity: O(e^n) where n is the size of the reversed sorted array." * doctest::timeout(0.4))
+    TEST_CASE("Time Complexity: O(n^2) where n is the size of the reversed sorted array." * doctest::timeout(0.4))
     {
         int arr[int(17)];
         for (int i = int(17) - 1; i >= 0; i--)
@@ -106,9 +105,11 @@ TEST_SUITE("Performance")
         }
         int arr_size = sizeof(arr) / sizeof(arr[0]);
         int n = lis(arr, arr_size);
+
+        MESSAGE("LIS Performance Test Passed");
     }
 
-    TEST_CASE("Time Complexity: O(e^n) where n is the size of the unsorted array." * doctest::timeout(0.4))
+    TEST_CASE("Time Complexity: O(n^2) where n is the size of the unsorted array." * doctest::timeout(0.4))
     {
         int arr[int(17)];
         for (int i = 0; i < int(17); i++)
@@ -117,5 +118,7 @@ TEST_SUITE("Performance")
         }
         int arr_size = sizeof(arr) / sizeof(arr[0]);
         int n = lis(arr, arr_size);
+
+        MESSAGE("LIS Performance Test Passed");
     }
 }

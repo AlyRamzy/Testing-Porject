@@ -4,8 +4,6 @@
 
 TEST_SUITE("Correctness")
 {
-
-
     SCENARIO("isEmpty") {
         GIVEN("An empty queue") {
             Queue myq;
@@ -27,7 +25,6 @@ TEST_SUITE("Correctness")
             }
         }
     }
-
 
     TEST_CASE("Enqueue")
     {
@@ -52,8 +49,8 @@ TEST_SUITE("Correctness")
 
             CHECK(myq.getLast() == MAX_SIZE - 1);
         }
-
     }
+
     TEST_CASE("Dequeue")
     {
         Queue myq;
@@ -61,7 +58,6 @@ TEST_SUITE("Correctness")
             myq.enQueue(i);
         SUBCASE("dequeue one element correctly while the queue is full")
         {
-
             CHECK(myq.deQueue() == 0);
             CHECK(myq.getFront() == 1);
         }
@@ -71,26 +67,18 @@ TEST_SUITE("Correctness")
 
         SUBCASE("dequeue untill the queue is empty")
         {
-
             CHECK(parity >= 0);
             CHECK(myq.isEmpty());
             CHECK(myq.getRear() == myq.getFront());
-
         }
         SUBCASE("dequeue while the queue is empty")
         {
             CHECK(myq.deQueue() == -1);
         }
-
-
     }
-
 }
 
 TEST_CASE_FIXTURE(Queue, "Check isFull() in Queue class") {
-
-
-
     SUBCASE("isFull is false when contain no element")
     {
         CHECK(!isFull() == true);
@@ -111,17 +99,16 @@ TEST_CASE_FIXTURE(Queue, "Check isFull() in Queue class") {
 }
 
 
-
-
 TEST_SUITE_BEGIN("Performance");
 
 TEST_CASE("Time Complexity: O(n) where n is the number of elements to push in the queue." * doctest::timeout(1 / 1000))
 {
-
     Queue myq;
     for (int i = 0; i < 1e5; i++)
     {
         myq.enQueue(i);
     }
+    MESSAGE("Queue performance test passed");
 }
+
 TEST_SUITE_END();

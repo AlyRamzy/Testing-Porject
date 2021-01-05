@@ -7,7 +7,6 @@ using namespace std;
 
 TEST_SUITE("Correctness")
 {
-
     TEST_CASE("One of the two arrays is empty")
     {
         char X[] = ""; 
@@ -84,12 +83,10 @@ TEST_SUITE("Correctness")
 
         CHECK(lcs(X, Y, m, n)==3);
     }
-
 }
 
 TEST_SUITE("Performance")
 {
-
     TEST_CASE("Time Complexity: O(nm) where n and m is the size of the two similar arrays." * doctest::timeout(0.3))
     {
         char arr1[int(1e3)];
@@ -104,6 +101,8 @@ TEST_SUITE("Performance")
         int arr1_size = strlen(arr1);
         int arr2_size = strlen(arr2);
         int n = lcs(arr1, arr2, arr1_size, arr2_size);
+
+        MESSAGE("LCS Performance Test Passed");
     }
 
     TEST_CASE("Time Complexity: O(nm) where n and m is the size of the tow unsimilar arrays." * doctest::timeout(0.3))
@@ -121,6 +120,8 @@ TEST_SUITE("Performance")
         int arr1_size = strlen(arr1);
         int arr2_size = strlen(arr2);
         int n = lcs(arr1, arr2, arr1_size, arr2_size);
+
+        MESSAGE("LCS Performance Test Passed");
     }
 }
 

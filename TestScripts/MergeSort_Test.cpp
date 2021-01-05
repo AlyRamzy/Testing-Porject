@@ -85,7 +85,9 @@ TEST_SUITE("Correctness")
 		INFO("MergeSort : Failur in sort one element array");
 		for (int i = 0; i < arr_size; i++)
 		{
+
 			CAPTURE(i);
+
 			CHECK(sortedArr[i] == arr[i]);
 		}
 	}
@@ -97,10 +99,12 @@ TEST_SUITE("Correctness")
 
 		mergeSort(arr, 0, arr_size - 1);
 		int sortedArr[] = {4, 12};
+
 		INFO("MergeSort : Failur in sort two element array");
 		
 		DO_ASSERSSIONS(arr,sortedArr,arr_size);
 		
+
 	}
 
 	TEST_CASE("Sort array with negative elements")
@@ -145,7 +149,6 @@ TEST_SUITE("Correctness")
 
 TEST_SUITE("Performance")
 {
-
 	TEST_CASE("Time Complexity: O(nlogn) where n is the size of the sorted array." * doctest::timeout(0.2))
 	{
 		int arr[int(1e6)];
@@ -155,6 +158,8 @@ TEST_SUITE("Performance")
 		}
 		int arr_size = sizeof(arr) / sizeof(arr[0]);
 		mergeSort(arr, 0, arr_size - 1);
+
+		MESSAGE("Merge Sort Performance Test Passed");
 	}
 
 	TEST_CASE("Time Complexity: O(nlogn) where n is the size of the reversed sorted array." * doctest::timeout(0.2))

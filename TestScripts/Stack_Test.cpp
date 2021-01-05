@@ -22,7 +22,6 @@ TEST_SUITE("Correctness")
         {
             push(&stack, i);
         }
-
         for (int i = 6; i >= 0; i--)
         {
             REQUIRE_EQ(pop(&stack), i);
@@ -30,7 +29,6 @@ TEST_SUITE("Correctness")
     }
     TEST_CASE("Uninitialized stack is empty")
     {
-
         StackNode *stack = NULL;
         REQUIRE_EQ(isEmpty(stack), true);
     }
@@ -67,7 +65,6 @@ TEST_SUITE("Correctness")
 
     TEST_CASE("The peek of stack is the last item pushed")
     {
-
         StackNode *stack = NULL;
 
         for (int i = 0; i < 7; i++)
@@ -76,6 +73,7 @@ TEST_SUITE("Correctness")
         }
         REQUIRE_EQ(peek(stack), 6);
     }
+
     TEST_CASE("The peek of empty stack")
     {
         StackNode *stack = NULL;
@@ -89,11 +87,11 @@ TEST_SUITE("Performance")
 {
     TEST_CASE("Time Complexity: O(n) where n is the number of elements to push in the stack." * doctest::timeout(0.5))
     {
-
         StackNode *stack = NULL;
         for (int i = 0; i < 1e7; i++)
         {
             push(&stack, i);
         }
+        MESSAGE("Stack performance test passed");
     }
 }

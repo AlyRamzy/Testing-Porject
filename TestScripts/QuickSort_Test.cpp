@@ -138,7 +138,7 @@ TEST_SUITE("Correctness")
 TEST_SUITE("Performance")
 {
 
-	TEST_CASE("Time Complexity: O(n^2) where n is the size of the sorted array." * doctest::timeout(0.2))
+	TEST_CASE("Time Complexity: O(n^2) where n is the size of the sorted array." * doctest::timeout(0.5))
 	{
 		int arr[int(1e3)];
 		for (int i = 0; i < int(1e3); i++)
@@ -147,9 +147,10 @@ TEST_SUITE("Performance")
 		}
 		int arr_size = 1e3;
 		quickSort(arr, 0, arr_size - 1);
+		MESSAGE("Quick sort performance test passed");
 	}
 
-	TEST_CASE("Time Complexity: O(n^2) where n is the size of the reversed sorted array." * doctest::timeout(0.2))
+	TEST_CASE("Time Complexity: O(n^2) where n is the size of the reversed sorted array." * doctest::timeout(0.5))
 	{
 		int arr[int(1e3)];
 		for (int i = int(1e3) - 1; i >= 0; i--)
@@ -160,7 +161,7 @@ TEST_SUITE("Performance")
 		quickSort(arr, 0, arr_size - 1);
 	}
 
-	TEST_CASE("Time Complexity: O(nlogn) where n is the size of the unsorted array." * doctest::timeout(0.5))
+	TEST_CASE("Time Complexity: O(nlogn) where n is the size of the unsorted array." * doctest::timeout(0.2))
 	{
 		int arr[int(1e4)];
 		for (int i = 0; i < int(1e4); i++)

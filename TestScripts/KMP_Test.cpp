@@ -18,8 +18,6 @@ TEST_SUITE("Correctness")
 
         for(int i = 0; i < EO.size(); i++)
             REQUIRE_EQ(EO[i], ActualOutput[i]);
-        
-        MESSAGE("General Test passed");
     }
 
     TEST_CASE("Multiple Occurences Test")
@@ -34,8 +32,6 @@ TEST_SUITE("Correctness")
 
         for(int i = 0; i < EO.size(); i++)
             REQUIRE_EQ(EO[i], ActualOutput[i]);
-        
-        MESSAGE("Multiple Occurences Test passed");
     }
 
     TEST_CASE("No Occurences Test")
@@ -50,8 +46,6 @@ TEST_SUITE("Correctness")
 
         for(int i = 0; i < EO.size(); i++)
             REQUIRE_EQ(EO[i], ActualOutput[i]);
-        
-        MESSAGE("No Occurences Test passed");
     }
 
     TEST_CASE("Empty String Test")
@@ -78,7 +72,6 @@ TEST_SUITE("Correctness")
             for(int i = 0; i < EO.size(); i++)
                 CHECK_EQ(EO[i], ActualOutput[i]);
         }
-        MESSAGE("Empty String Test passed");
     }
     
     TEST_CASE("Pattern Longer Than String Test")
@@ -93,8 +86,6 @@ TEST_SUITE("Correctness")
 
         for(int i = 0; i < EO.size(); i++)
             REQUIRE_EQ(EO[i], ActualOutput[i]);
-        
-        MESSAGE("Pattern Longer Than String Test passed");
     }
 }
 
@@ -118,6 +109,6 @@ TEST_SUITE("Performance")
         for(int i = 0; i < EO.size(); i++)
             REQUIRE_EQ(EO[i], ActualOutput[i]);
         
-        MESSAGE("Performance Test Passed");
+        MESSAGE("KMP Performance Test Passed");
     }
 }

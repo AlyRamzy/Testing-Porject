@@ -48,7 +48,6 @@ TEST_SUITE("Correctness")
             CHECK(hull[i].x == convex_hull[i].x);
             CHECK(hull[i].y == convex_hull[i].y);
         }
-
     }
 
     TEST_CASE("All points on the same line")
