@@ -33,7 +33,6 @@ TEST_SUITE("Correctness")
             CAPTURE(Expected_Output[i]); 
             doChecks(Actual_Output[i],Expected_Output[i]);
         }
-        MESSAGE("TEST CASE 0 :Main success scenario passed");
     }
     TEST_CASE("TEST CASE 1 : starting with node not inside the graph"){
         vector<int> out;
@@ -47,12 +46,10 @@ TEST_SUITE("Correctness")
         
         out  = g.BFS(4);
         CHECK(out.size()==0);
-        MESSAGE("TEST CASE 1 : starting with node not inside the graph passed");
     }
 
     TEST_CASE("TEST CASE 2 :construct graph with -ve number of nodes"){
         CHECK_NOTHROW(Graph g(-1));
-        MESSAGE("TEST CASE 2 :construct graph with -ve number of nodes, didn't throw");
     }
     
     TEST_CASE("TEST CASE 3 :Construct Graph with -ve number to search for"){
@@ -67,7 +64,6 @@ TEST_SUITE("Correctness")
 
         CHECK_NOTHROW(g.BFS(-1));
         CHECK(g.BFS(-1).size()==0);
-        MESSAGE("TEST CASE 3 :Construct Graph with -ve number to search for, didn't throw");
     }
 
     TEST_CASE("TEST CASE 4 :Checking edges in the graph"){
@@ -90,7 +86,6 @@ TEST_SUITE("Correctness")
         SUBCASE("Add edge between dist that doesnt not exist and exists src"){
             CHECK(g.addEdge(2,6)==false);
         }
-        MESSAGE("TEST CASE 4 :Checking edges in the graph passed");
     }
 
     TEST_CASE("TEST CASE 5 :Checking graph with no edges"){
@@ -100,7 +95,6 @@ TEST_SUITE("Correctness")
         Actual_Output = g.BFS(3);
         Expected_Output.push_back(3);
         CHECK(Actual_Output==Expected_Output);
-        MESSAGE("TEST CASE 5 :Checking graph with no edges passed");
     }
 
     TEST_CASE("TEST CASE 6 :Checking graph with one node and no edges"){
@@ -109,7 +103,6 @@ TEST_SUITE("Correctness")
         Actual_Output = g.BFS(0);
         Expected_Output.push_back(0);
         CHECK(Actual_Output==Expected_Output);
-        MESSAGE("TEST CASE 6 :Checking graph with one node and no edges passed");
     }
 
     TEST_CASE("TEST CASE 7 :Checking graph with one node and one cylcic edges"){
@@ -119,8 +112,6 @@ TEST_SUITE("Correctness")
         Actual_Output = g.BFS(0);
         Expected_Output.push_back(0);
         CHECK(Actual_Output==Expected_Output);
-
-        MESSAGE("TEST CASE 7 :Checking graph with one node and one cylcic edges passed");
     }
 }
 
@@ -139,7 +130,7 @@ TEST_SUITE("Performance")
         vector<int> Actual_Output = g.BFS(0);
         REQUIRE(Actual_Output==Expected_Output);
        
-        MESSAGE("Performance Test Passed For BFS");
+        MESSAGE("BFS Performance Test Passed");
     }
 }
 

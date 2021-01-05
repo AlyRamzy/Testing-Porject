@@ -19,7 +19,6 @@ TEST_SUITE("Correctness")
             string str = "abbbaxyz";
             REQUIRE_EQ(Obj.Solve(str), 5);
         }
-        MESSAGE("Odd Length Answer Test Passed");
     }
 
     TEST_CASE("Even Length Answer Test")
@@ -35,7 +34,6 @@ TEST_SUITE("Correctness")
             string str = "abbaxyz";
             REQUIRE_EQ(Obj.Solve(str), 4);
         }
-        MESSAGE("Even Length Answer Test Passed");
     }
 
     TEST_CASE("All Characters Distinct Test")
@@ -43,7 +41,6 @@ TEST_SUITE("Correctness")
         LongestPalindromicSubString Obj;
         string str = "abcdefghi";
         REQUIRE_EQ(Obj.Solve(str), 1);
-        MESSAGE("All Characters Distinct Test Passed");
     }
 
     TEST_CASE("Empty String Test")
@@ -51,7 +48,6 @@ TEST_SUITE("Correctness")
         LongestPalindromicSubString Obj;
         string str = "";
         REQUIRE_EQ(Obj.Solve(str), 0);
-        MESSAGE("Empty String Test Passed");
     }
 }
 
@@ -65,6 +61,6 @@ TEST_SUITE("Performance")
         LongestPalindromicSubString Obj;
         Obj.Solve(str);
         
-        MESSAGE("Performance Test Passed");
+        MESSAGE("LPS Performance Test Passed");
     }
 }

@@ -31,6 +31,7 @@ TEST_SUITE("Correctness")
             REQUIRE_EQ("13", t.traversal(TraversalType::LEVELORDER));
             REQUIRE_EQ("13", t.traversal(TraversalType::LEVELORDER_SEP));
         }
+
         SUBCASE(" Traversing multiple  node  tree")
         {
             Tree t;
@@ -48,9 +49,6 @@ TEST_SUITE("Correctness")
             REQUIRE_EQ("13 3 20 1 7 15 4", t.traversal(TraversalType::LEVELORDER));
             REQUIRE_EQ("13\n3 20\n1 7 15\n4", t.traversal(TraversalType::LEVELORDER_SEP));
         }
-        
-        
-
     }
 }
 TEST_SUITE("Performance")
@@ -66,7 +64,7 @@ TEST_SUITE("Performance")
         }
        
         tree.traversal(TraversalType::PREORDER); // takes O(n)
-       
-        
+
+        MESSAGE("BST Traversal performance test passed");
     }
 }

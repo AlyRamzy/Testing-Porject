@@ -102,5 +102,6 @@ TEST_SUITE("Performance")
                 }
                 int arr_size = sizeof(arr) / sizeof(arr[0]);
                 binarySearch(arr, 0, arr_size - 1, rand());
+                MESSAGE("Binary Search performance test passed");
         }
 }

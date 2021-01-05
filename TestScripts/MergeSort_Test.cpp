@@ -83,8 +83,6 @@ TEST_SUITE("Correctness")
 		int sortedArr[] = {12};
 		for (int i = 0; i < arr_size; i++)
 		{
-			//FAIL_CHECK("this should not end the test case, but mark it as failing");
-    			//MESSAGE("reached!");
 			CHECK(sortedArr[i] == arr[i]);
 		}
 	}
@@ -98,7 +96,6 @@ TEST_SUITE("Correctness")
 		int sortedArr[] = {4, 12};
 		for (int i = 0; i < arr_size; i++)
 		{
-			
 			CHECK(sortedArr[i] == arr[i]);
 		}
 	}
@@ -145,7 +142,6 @@ TEST_SUITE("Correctness")
 
 TEST_SUITE("Performance")
 {
-
 	TEST_CASE("Time Complexity: O(nlogn) where n is the size of the sorted array." * doctest::timeout(0.2))
 	{
 		int arr[int(1e6)];
@@ -155,6 +151,8 @@ TEST_SUITE("Performance")
 		}
 		int arr_size = sizeof(arr) / sizeof(arr[0]);
 		mergeSort(arr, 0, arr_size - 1);
+
+		MESSAGE("Merge Sort Performance Test Passed");
 	}
 
 	TEST_CASE("Time Complexity: O(nlogn) where n is the size of the reversed sorted array." * doctest::timeout(0.2))

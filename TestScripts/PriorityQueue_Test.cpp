@@ -3,7 +3,6 @@
 #include "../Tool/doctest.h"
 TEST_SUITE("Correctness")
 {
-
     TEST_CASE("isEmpty")
     {
         Priority_Queue pq;
@@ -22,25 +21,22 @@ TEST_SUITE("Correctness")
         {
             CHECK(pq.isEmpty() == true);
         }
-
     }
+
     TEST_CASE("Enqueue")
     {
         Priority_Queue pq;
         pq.insert(0, 0);
         SUBCASE("insert the first element")
         {
-
             CHECK(!pq.isEmpty() == true);
             CHECK(pq.peekFrontInfo() == pq.peekRearInfo());
         }
-
         int prev_front_priority = pq.peekFrontPriority();
         int prev_front_info = pq.peekFrontInfo();
         pq.insert(1, prev_front_priority + 10);
         SUBCASE("insert an element which is larger than the last inserted one")
         {
-
             CHECK(pq.peekFrontPriority() == prev_front_priority + 10);
         }
         prev_front_priority = pq.peekFrontPriority();
@@ -48,7 +44,6 @@ TEST_SUITE("Correctness")
         pq.insert(2, prev_front_priority - 5);
         SUBCASE("insert an element which is smaller than the last inserted one")
         {
-
             CHECK(pq.peekFrontPriority() == prev_front_priority);
         }
         for (int i = 3; i < 7; i++)
@@ -59,14 +54,11 @@ TEST_SUITE("Correctness")
         {
             while (!pq.isEmpty())
             {
-
                 CHECK(pq.peekFrontPriority() < tmpPr);
                 tmpPr = pq.peekFrontPriority();
                 pq.del();
-
             }
         }
-
     }
     TEST_CASE("Dequeue")
     {
@@ -81,15 +73,14 @@ TEST_SUITE("Correctness")
 
         SUBCASE("Test delete element when queue is  not empty")
         {
-
             while (!pq.isEmpty())
             {
                 CHECK_NOTHROW(pq.del());
             }
             CHECK(pq.isEmpty() == true);
         }
-
     }
+
     TEST_CASE("Peek")
     {
         Priority_Queue pq;
@@ -112,12 +103,12 @@ TEST_SUITE("Performance")
 {
     TEST_CASE("Time Complexity for insert: O(n^2) where n is the number of elements to push in the priority queue." * doctest::timeout(100))
     {
-
         Priority_Queue myq;
         for (int i = 0; i < 1e5; i++)
         {
             myq.insert(i, i);
         }
+        MESSAGE("Priority Queue performance test passed");
     }
 }
 

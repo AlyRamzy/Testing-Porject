@@ -15,8 +15,6 @@ TEST_SUITE("Correctness")
 
         for(int i = 0; i < arr.size(); i++)
             REQUIRE_EQ(arr[i], Obj.GetMin(i,i));
-
-        MESSAGE("Segment Tree Build With Valid Array Test Passed");
     }
 
     TEST_CASE("Segment Tree Build With Empty Array Test")
@@ -25,8 +23,6 @@ TEST_SUITE("Correctness")
         MinSegTree Obj(arr);
 
         REQUIRE_EQ(INT_MAX, Obj.GetMin(0,0));
-
-        MESSAGE("Segment Tree Build With Empty Array Test Passed");
     }
 
     TEST_CASE("Segment Tree Update with Valid and Boundary Index Test")
@@ -49,7 +45,6 @@ TEST_SUITE("Correctness")
             Obj.Update(6, -10);
             REQUIRE_EQ(-10, Obj.GetMin(6, 6));
         }
-        MESSAGE("Segment Tree Update with Valid and Boundary Index Test Passed");
     }
 
     TEST_CASE("Segment Tree Update with Invalid Index Test")
@@ -71,7 +66,6 @@ TEST_SUITE("Correctness")
             for(int i = 0; i < arr.size(); i++)
                 CHECK_EQ(arr[i], Obj.GetMin(i,i));
         }
-        MESSAGE("Segment Tree Update with Invalid Index Test Passed");
     }
 
     TEST_CASE("Segment Tree Query with Multiple Valid Ranges Test")
@@ -86,8 +80,6 @@ TEST_SUITE("Correctness")
 
         for(int i = 0; i < ranges.size(); i++)
             CHECK_EQ(answers[i], Obj.GetMin(ranges[i].first, ranges[i].second));
-        
-        MESSAGE("Segment Tree Query with Multiple Valid Ranges Test");
     }
 
     TEST_CASE("Segment Tree Query with Multiple InValid Ranges Test")
@@ -99,8 +91,6 @@ TEST_SUITE("Correctness")
 
         for(int i = 0; i < ranges.size(); i++)
             CHECK_EQ(INT_MAX, Obj.GetMin(ranges[i].first, ranges[i].second));
-        
-        MESSAGE("Segment Tree Query with Multiple InValid Ranges Test");
     }
 }
 
