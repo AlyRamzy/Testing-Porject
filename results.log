@@ -1,0 +1,407 @@
+[doctest] doctest version is "2.4.3"
+[doctest] run with "--dt-help" for options
+===============================================================================
+TestScripts/BFS_Test.cpp:12:
+TEST SUITE: Correctness
+TEST CASE:  TEST CASE 0 :Main success scenario
+
+TestScripts/BFS_Test.cpp:36: MESSAGE: TEST CASE 0 :Main success scenario passed
+
+===============================================================================
+TestScripts/BFS_Test.cpp:38:
+TEST SUITE: Correctness
+TEST CASE:  TEST CASE 1 : starting with node not inside the graph
+
+TestScripts/BFS_Test.cpp:50: MESSAGE: TEST CASE 1 : starting with node not inside the graph passed
+
+===============================================================================
+TestScripts/BFS_Test.cpp:53:
+TEST SUITE: Correctness
+TEST CASE:  TEST CASE 2 :construct graph with -ve number of nodes
+
+TestScripts/BFS_Test.cpp:54: ERROR: CHECK_NOTHROW( Graph g(-1) ) THREW exception: "std::bad_alloc"
+
+TestScripts/BFS_Test.cpp:55: MESSAGE: TEST CASE 2 :construct graph with -ve number of nodes, didn't throw
+
+===============================================================================
+TestScripts/BFS_Test.cpp:58:
+TEST SUITE: Correctness
+TEST CASE:  TEST CASE 3 :Construct Graph with -ve number to search for
+
+TestScripts/BFS_Test.cpp:70: MESSAGE: TEST CASE 3 :Construct Graph with -ve number to search for, didn't throw
+
+===============================================================================
+TestScripts/BFS_Test.cpp:73:
+TEST SUITE: Correctness
+TEST CASE:  TEST CASE 4 :Checking edges in the graph
+
+DEEPEST SUBCASE STACK REACHED (DIFFERENT FROM THE CURRENT ONE):
+  Add edge between two nodes exists in the graph
+
+TestScripts/BFS_Test.cpp:93: MESSAGE: TEST CASE 4 :Checking edges in the graph passed
+
+===============================================================================
+TestScripts/BFS_Test.cpp:73:
+TEST SUITE: Correctness
+TEST CASE:  TEST CASE 4 :Checking edges in the graph
+
+DEEPEST SUBCASE STACK REACHED (DIFFERENT FROM THE CURRENT ONE):
+  Add edge between two nodes doesnt exist in the graph
+
+TestScripts/BFS_Test.cpp:93: MESSAGE: TEST CASE 4 :Checking edges in the graph passed
+
+===============================================================================
+TestScripts/BFS_Test.cpp:73:
+TEST SUITE: Correctness
+TEST CASE:  TEST CASE 4 :Checking edges in the graph
+
+DEEPEST SUBCASE STACK REACHED (DIFFERENT FROM THE CURRENT ONE):
+  Add edge between -ve value as src
+
+TestScripts/BFS_Test.cpp:93: MESSAGE: TEST CASE 4 :Checking edges in the graph passed
+
+===============================================================================
+TestScripts/BFS_Test.cpp:73:
+TEST SUITE: Correctness
+TEST CASE:  TEST CASE 4 :Checking edges in the graph
+
+DEEPEST SUBCASE STACK REACHED (DIFFERENT FROM THE CURRENT ONE):
+  Add edge between -ve value as dist
+
+TestScripts/BFS_Test.cpp:93: MESSAGE: TEST CASE 4 :Checking edges in the graph passed
+
+===============================================================================
+TestScripts/BFS_Test.cpp:73:
+TEST SUITE: Correctness
+TEST CASE:  TEST CASE 4 :Checking edges in the graph
+
+DEEPEST SUBCASE STACK REACHED (DIFFERENT FROM THE CURRENT ONE):
+  Add edge between src that doesnt not exist and exists dist
+
+TestScripts/BFS_Test.cpp:93: MESSAGE: TEST CASE 4 :Checking edges in the graph passed
+
+===============================================================================
+TestScripts/BFS_Test.cpp:73:
+TEST SUITE: Correctness
+TEST CASE:  TEST CASE 4 :Checking edges in the graph
+
+DEEPEST SUBCASE STACK REACHED (DIFFERENT FROM THE CURRENT ONE):
+  Add edge between dist that doesnt not exist and exists src
+
+TestScripts/BFS_Test.cpp:93: MESSAGE: TEST CASE 4 :Checking edges in the graph passed
+
+===============================================================================
+TestScripts/BFS_Test.cpp:96:
+TEST SUITE: Correctness
+TEST CASE:  TEST CASE 5 :Checking graph with no edges
+
+TestScripts/BFS_Test.cpp:103: MESSAGE: TEST CASE 5 :Checking graph with no edges passed
+
+===============================================================================
+TestScripts/BFS_Test.cpp:106:
+TEST SUITE: Correctness
+TEST CASE:  TEST CASE 6 :Checking graph with one node and no edges
+
+TestScripts/BFS_Test.cpp:112: MESSAGE: TEST CASE 6 :Checking graph with one node and no edges passed
+
+===============================================================================
+TestScripts/BFS_Test.cpp:115:
+TEST SUITE: Correctness
+TEST CASE:  TEST CASE 7 :Checking graph with one node and one cylcic edges
+
+TestScripts/BFS_Test.cpp:123: MESSAGE: TEST CASE 7 :Checking graph with one node and one cylcic edges passed
+
+===============================================================================
+TestScripts/BFS_Test.cpp:131:
+TEST SUITE: Performance
+TEST CASE:  Time Complexity: O(V+E) where V is number of vertices in the graph and E is number of edges in the graph.
+
+TestScripts/BFS_Test.cpp:142: MESSAGE: Performance Test Passed For BFS
+
+===============================================================================
+TestScripts/EulerTour_Test.cpp:52:
+TEST SUITE: Correctness
+TEST CASE:  TEST CASE 2 :construct tree with -ve number of nodes
+
+TestScripts/EulerTour_Test.cpp:56: ERROR: CHECK_NOTHROW( Tree t(-1) ) THREW exception: "std::bad_alloc"
+
+===============================================================================
+TestScripts/EulerTour_Test.cpp:174:
+TEST SUITE: Performance
+TEST CASE:  Time Complexity: O(N) where N is number of vertices in the tree.
+
+Test case exceeded time limit of 0.500000!
+===============================================================================
+TestScripts/KMP_Test.cpp:9:
+TEST SUITE: Correctness
+TEST CASE:  General Test
+
+TestScripts/KMP_Test.cpp:22: MESSAGE: General Test passed
+
+===============================================================================
+TestScripts/KMP_Test.cpp:25:
+TEST SUITE: Correctness
+TEST CASE:  Multiple Occurences Test
+
+TestScripts/KMP_Test.cpp:38: MESSAGE: Multiple Occurences Test passed
+
+===============================================================================
+TestScripts/KMP_Test.cpp:41:
+TEST SUITE: Correctness
+TEST CASE:  No Occurences Test
+
+TestScripts/KMP_Test.cpp:54: MESSAGE: No Occurences Test passed
+
+===============================================================================
+TestScripts/KMP_Test.cpp:57:
+TEST SUITE: Correctness
+TEST CASE:  Empty String Test
+
+DEEPEST SUBCASE STACK REACHED (DIFFERENT FROM THE CURRENT ONE):
+  Empty Pattern Test
+
+TestScripts/KMP_Test.cpp:81: MESSAGE: Empty String Test passed
+
+===============================================================================
+TestScripts/KMP_Test.cpp:57:
+TEST SUITE: Correctness
+TEST CASE:  Empty String Test
+
+DEEPEST SUBCASE STACK REACHED (DIFFERENT FROM THE CURRENT ONE):
+  Empty String Test
+
+TestScripts/KMP_Test.cpp:81: MESSAGE: Empty String Test passed
+
+===============================================================================
+TestScripts/KMP_Test.cpp:84:
+TEST SUITE: Correctness
+TEST CASE:  Pattern Longer Than String Test
+
+TestScripts/KMP_Test.cpp:97: MESSAGE: Pattern Longer Than String Test passed
+
+===============================================================================
+TestScripts/KMP_Test.cpp:103:
+TEST SUITE: Performance
+TEST CASE:  Test O(n + m) KMP implementation
+
+TestScripts/KMP_Test.cpp:121: MESSAGE: Performance Test Passed
+
+===============================================================================
+TestScripts/Kruskal_Test.cpp:9:
+TEST SUITE: Correctness
+TEST CASE:  General Case Test
+
+TestScripts/Kruskal_Test.cpp:22: MESSAGE: General Case Test Passed
+
+===============================================================================
+TestScripts/Kruskal_Test.cpp:25:
+TEST SUITE: Correctness
+TEST CASE:  Negative Size of Graph
+
+TestScripts/Kruskal_Test.cpp:27: ERROR: CHECK_NOTHROW( Kruskal(-5,vector<edge>()) ) THREW exception: "vector::_M_default_append"
+
+===============================================================================
+TestScripts/Kruskal_Test.cpp:30:
+TEST SUITE: Correctness
+TEST CASE:  Fully Connected Graph Test
+
+DEEPEST SUBCASE STACK REACHED (DIFFERENT FROM THE CURRENT ONE):
+  Equal Weights
+
+TestScripts/Kruskal_Test.cpp:55: MESSAGE: Fully Connected Graph Test Passed
+
+===============================================================================
+TestScripts/Kruskal_Test.cpp:30:
+TEST SUITE: Correctness
+TEST CASE:  Fully Connected Graph Test
+
+DEEPEST SUBCASE STACK REACHED (DIFFERENT FROM THE CURRENT ONE):
+  Different Weights
+
+TestScripts/Kruskal_Test.cpp:55: MESSAGE: Fully Connected Graph Test Passed
+
+===============================================================================
+TestScripts/Kruskal_Test.cpp:58:
+TEST SUITE: Correctness
+TEST CASE:  Disconnected Graph Test
+
+TestScripts/Kruskal_Test.cpp:69: MESSAGE: Disconnected Graph Test Passed
+
+===============================================================================
+TestScripts/Kruskal_Test.cpp:72:
+TEST SUITE: Correctness
+TEST CASE:  Tree Test
+
+TestScripts/Kruskal_Test.cpp:84: MESSAGE: Tree Test Passed
+
+===============================================================================
+TestScripts/Kruskal_Test.cpp:90:
+TEST SUITE: Performance
+TEST CASE:  Performance Test
+
+TestScripts/Kruskal_Test.cpp:99: MESSAGE: Performance Test Passed
+
+===============================================================================
+TestScripts/LongestPalindromicSubstring_Test.cpp:9:
+TEST SUITE: Correctness
+TEST CASE:  Odd Length Answer Test
+
+DEEPEST SUBCASE STACK REACHED (DIFFERENT FROM THE CURRENT ONE):
+  Multiple Substrings with Maximum Length
+
+TestScripts/LongestPalindromicSubstring_Test.cpp:22: MESSAGE: Odd Length Answer Test Passed
+
+===============================================================================
+TestScripts/LongestPalindromicSubstring_Test.cpp:9:
+TEST SUITE: Correctness
+TEST CASE:  Odd Length Answer Test
+
+DEEPEST SUBCASE STACK REACHED (DIFFERENT FROM THE CURRENT ONE):
+  Single SubString with Maximum Length
+
+TestScripts/LongestPalindromicSubstring_Test.cpp:22: MESSAGE: Odd Length Answer Test Passed
+
+===============================================================================
+TestScripts/LongestPalindromicSubstring_Test.cpp:25:
+TEST SUITE: Correctness
+TEST CASE:  Even Length Answer Test
+
+DEEPEST SUBCASE STACK REACHED (DIFFERENT FROM THE CURRENT ONE):
+  Multiple Substrings with Maximum Length
+
+TestScripts/LongestPalindromicSubstring_Test.cpp:38: MESSAGE: Even Length Answer Test Passed
+
+===============================================================================
+TestScripts/LongestPalindromicSubstring_Test.cpp:25:
+TEST SUITE: Correctness
+TEST CASE:  Even Length Answer Test
+
+DEEPEST SUBCASE STACK REACHED (DIFFERENT FROM THE CURRENT ONE):
+  Single SubString with Maximum Length
+
+TestScripts/LongestPalindromicSubstring_Test.cpp:38: MESSAGE: Even Length Answer Test Passed
+
+===============================================================================
+TestScripts/LongestPalindromicSubstring_Test.cpp:41:
+TEST SUITE: Correctness
+TEST CASE:  All Characters Distinct Test
+
+TestScripts/LongestPalindromicSubstring_Test.cpp:46: MESSAGE: All Characters Distinct Test Passed
+
+===============================================================================
+TestScripts/LongestPalindromicSubstring_Test.cpp:49:
+TEST SUITE: Correctness
+TEST CASE:  Empty String Test
+
+TestScripts/LongestPalindromicSubstring_Test.cpp:54: MESSAGE: Empty String Test Passed
+
+===============================================================================
+TestScripts/LongestPalindromicSubstring_Test.cpp:60:
+TEST SUITE: Performance
+TEST CASE:  Test O(n^2) implementation
+
+TestScripts/LongestPalindromicSubstring_Test.cpp:68: MESSAGE: Performance Test Passed
+
+===============================================================================
+TestScripts/SegTree_Test.cpp:11:
+TEST SUITE: Correctness
+TEST CASE:  Segment Tree Build With Valid Array Test
+
+TestScripts/SegTree_Test.cpp:19: MESSAGE: Segment Tree Build With Valid Array Test Passed
+
+===============================================================================
+TestScripts/SegTree_Test.cpp:22:
+TEST SUITE: Correctness
+TEST CASE:  Segment Tree Build With Empty Array Test
+
+TestScripts/SegTree_Test.cpp:29: MESSAGE: Segment Tree Build With Empty Array Test Passed
+
+===============================================================================
+TestScripts/SegTree_Test.cpp:32:
+TEST SUITE: Correctness
+TEST CASE:  Segment Tree Update with Valid and Boundary Index Test
+
+DEEPEST SUBCASE STACK REACHED (DIFFERENT FROM THE CURRENT ONE):
+  Updating index 0
+
+TestScripts/SegTree_Test.cpp:52: MESSAGE: Segment Tree Update with Valid and Boundary Index Test Passed
+
+===============================================================================
+TestScripts/SegTree_Test.cpp:32:
+TEST SUITE: Correctness
+TEST CASE:  Segment Tree Update with Valid and Boundary Index Test
+
+DEEPEST SUBCASE STACK REACHED (DIFFERENT FROM THE CURRENT ONE):
+  Updating index 3
+
+TestScripts/SegTree_Test.cpp:52: MESSAGE: Segment Tree Update with Valid and Boundary Index Test Passed
+
+===============================================================================
+TestScripts/SegTree_Test.cpp:32:
+TEST SUITE: Correctness
+TEST CASE:  Segment Tree Update with Valid and Boundary Index Test
+
+DEEPEST SUBCASE STACK REACHED (DIFFERENT FROM THE CURRENT ONE):
+  Updating index 6
+
+TestScripts/SegTree_Test.cpp:52: MESSAGE: Segment Tree Update with Valid and Boundary Index Test Passed
+
+===============================================================================
+TestScripts/SegTree_Test.cpp:55:
+TEST SUITE: Correctness
+TEST CASE:  Segment Tree Update with Invalid Index Test
+
+DEEPEST SUBCASE STACK REACHED (DIFFERENT FROM THE CURRENT ONE):
+  Updating index -1
+
+TestScripts/SegTree_Test.cpp:74: MESSAGE: Segment Tree Update with Invalid Index Test Passed
+
+===============================================================================
+TestScripts/SegTree_Test.cpp:55:
+TEST SUITE: Correctness
+TEST CASE:  Segment Tree Update with Invalid Index Test
+
+DEEPEST SUBCASE STACK REACHED (DIFFERENT FROM THE CURRENT ONE):
+  Updating index 100
+
+TestScripts/SegTree_Test.cpp:74: MESSAGE: Segment Tree Update with Invalid Index Test Passed
+
+===============================================================================
+TestScripts/SegTree_Test.cpp:77:
+TEST SUITE: Correctness
+TEST CASE:  Segment Tree Query with Multiple Valid Ranges Test
+
+TestScripts/SegTree_Test.cpp:90: MESSAGE: Segment Tree Query with Multiple Valid Ranges Test
+
+===============================================================================
+TestScripts/SegTree_Test.cpp:93:
+TEST SUITE: Correctness
+TEST CASE:  Segment Tree Query with Multiple InValid Ranges Test
+
+TestScripts/SegTree_Test.cpp:103: MESSAGE: Segment Tree Query with Multiple InValid Ranges Test
+
+===============================================================================
+TestScripts/SegTree_Test.cpp:109:
+TEST SUITE: Performance
+TEST CASE:  Test O(n) Segment Tree Build implementation
+
+TestScripts/SegTree_Test.cpp:117: MESSAGE: Build Performance Test Passed
+
+===============================================================================
+TestScripts/SegTree_Test.cpp:120:
+TEST SUITE: Performance
+TEST CASE:  Test O(Log(n)) Segment Tree Update implementation
+
+TestScripts/SegTree_Test.cpp:135: MESSAGE: Update Performance Test Passed
+
+===============================================================================
+TestScripts/SegTree_Test.cpp:138:
+TEST SUITE: Performance
+TEST CASE:  Test O(Log(n)) Segment Tree Query implementation
+
+TestScripts/SegTree_Test.cpp:153: MESSAGE: Query Performance Test Passed
+
+===============================================================================
+[doctest] test cases:     159 |     155 passed | 4 failed | 0 skipped
+[doctest] assertions: 1000464 | 1000461 passed | 3 failed |
+[doctest] Status: FAILURE!

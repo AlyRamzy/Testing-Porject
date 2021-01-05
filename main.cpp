@@ -3,15 +3,9 @@
 
 #include "Tool/doctest.h"
 
-int main()
+int main(int argc, char ** argv)
 {
-    doctest::Context context;
-
-    context.addFilter("source-file", "/TestScripts/*.cpp"); 
-    // overrides
-    context.setOption("no-breaks", true);             // don't break in the debugger when assertions fail
-
-    // context.applyCommandLine(argc, argv);
+    doctest::Context context(argc, argv);
 
     int test_result = context.run(); // run queries, or run tests unless --no-run
 

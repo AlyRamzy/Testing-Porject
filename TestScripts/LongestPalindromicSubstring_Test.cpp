@@ -19,8 +19,9 @@ TEST_SUITE("Correctness")
             string str = "abbbaxyz";
             REQUIRE_EQ(Obj.Solve(str), 5);
         }
-        cout<<"Odd Length Answer Test Passed"<<endl;
+        MESSAGE("Odd Length Answer Test Passed");
     }
+
     TEST_CASE("Even Length Answer Test")
     {
         LongestPalindromicSubString Obj;
@@ -34,21 +35,23 @@ TEST_SUITE("Correctness")
             string str = "abbaxyz";
             REQUIRE_EQ(Obj.Solve(str), 4);
         }
-        cout<<"Even Length Answer Test Passed"<<endl;
+        MESSAGE("Even Length Answer Test Passed");
     }
+
     TEST_CASE("All Characters Distinct Test")
     {
         LongestPalindromicSubString Obj;
         string str = "abcdefghi";
         REQUIRE_EQ(Obj.Solve(str), 1);
-        cout<<"All Characters Distinct Test Passed"<<endl;
+        MESSAGE("All Characters Distinct Test Passed");
     }
+
     TEST_CASE("Empty String Test")
     {
         LongestPalindromicSubString Obj;
         string str = "";
         REQUIRE_EQ(Obj.Solve(str), 0);
-        cout<<"Empty String Test Passed"<<endl;
+        MESSAGE("Empty String Test Passed");
     }
 }
 
@@ -62,6 +65,6 @@ TEST_SUITE("Performance")
         LongestPalindromicSubString Obj;
         Obj.Solve(str);
         
-        cout<<"Performance Test Passed"<<endl;
+        MESSAGE("Performance Test Passed");
     }
 }

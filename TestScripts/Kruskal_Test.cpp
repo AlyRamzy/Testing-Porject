@@ -19,8 +19,14 @@ TEST_SUITE("Correctness")
         Kruskal Obj(nodes, edges);
 
         REQUIRE_EQ(Obj.FindMSTValue(), 34);
-        cout<<"General Case Test Passed"<<endl;
+        MESSAGE("General Case Test Passed");
     }
+
+    TEST_CASE("Negative Size of Graph")
+    {
+        CHECK_NOTHROW(Kruskal(-5,vector<edge>()));
+    }
+
     TEST_CASE("Fully Connected Graph Test")
     {
         int nodes = 5;
@@ -46,8 +52,9 @@ TEST_SUITE("Correctness")
 
             REQUIRE_EQ(Obj.FindMSTValue(), 36);
         }
-        cout<<"Fully Connected Graph Test Passed"<<endl;
+        MESSAGE("Fully Connected Graph Test Passed");
     }
+
     TEST_CASE("Disconnected Graph Test")
     {
         int nodes = 5;
@@ -59,8 +66,9 @@ TEST_SUITE("Correctness")
         Kruskal Obj(nodes, edges);
 
         REQUIRE_EQ(Obj.FindMSTValue(), LONG_LONG_MIN);
-        cout<<"Disconnected Graph Test Passed"<<endl;
+        MESSAGE("Disconnected Graph Test Passed");
     }
+
     TEST_CASE("Tree Test")
     {
         int nodes = 5;
@@ -73,7 +81,7 @@ TEST_SUITE("Correctness")
         Kruskal Obj(nodes, edges);
 
         REQUIRE_EQ(Obj.FindMSTValue(), 13);
-        cout<<"Tree Test Passed"<<endl;
+        MESSAGE("Tree Test Passed");
     }
 }
 
@@ -88,7 +96,6 @@ TEST_SUITE("Performance")
                 edges.push_back({i,j,10});
         
         Kruskal Obj(nodes, edges);
-        cout<<Obj.FindMSTValue()<<endl;
-        cout<<"Performance Test Passed"<<endl;
+        MESSAGE("Performance Test Passed");
     }
 }

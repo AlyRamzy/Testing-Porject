@@ -28,7 +28,6 @@ TEST_SUITE("Correctness")
 	TEST_CASE("Sort null pointer array")
 	{
 		int *arr = NULL;
-
 		CHECK_NOTHROW(mergeSort(arr, 0, -1));
 	}
 
@@ -56,7 +55,6 @@ TEST_SUITE("Correctness")
 		int sortedArr[] = {4, 6, 10, 12, 15, 23, 35};
 		for (int i = 0; i < arr_size; i++)
 		{
-			MESSAGE("passed another iteration of the loop");
 			CHECK(sortedArr[i] == arr[i]);
 		}
 	}

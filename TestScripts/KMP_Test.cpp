@@ -19,8 +19,9 @@ TEST_SUITE("Correctness")
         for(int i = 0; i < EO.size(); i++)
             REQUIRE_EQ(EO[i], ActualOutput[i]);
         
-        cout<<"General Test passed"<<endl;
+        MESSAGE("General Test passed");
     }
+
     TEST_CASE("Multiple Occurences Test")
     {
         KMP Obj;
@@ -34,8 +35,9 @@ TEST_SUITE("Correctness")
         for(int i = 0; i < EO.size(); i++)
             REQUIRE_EQ(EO[i], ActualOutput[i]);
         
-        cout<<"Multiple Occurences Test passed"<<endl;
+        MESSAGE("Multiple Occurences Test passed");
     }
+
     TEST_CASE("No Occurences Test")
     {
         KMP Obj;
@@ -49,8 +51,9 @@ TEST_SUITE("Correctness")
         for(int i = 0; i < EO.size(); i++)
             REQUIRE_EQ(EO[i], ActualOutput[i]);
         
-        cout<<"No Occurences Test passed"<<endl;
+        MESSAGE("No Occurences Test passed");
     }
+
     TEST_CASE("Empty String Test")
     {
         KMP Obj;
@@ -75,8 +78,9 @@ TEST_SUITE("Correctness")
             for(int i = 0; i < EO.size(); i++)
                 CHECK_EQ(EO[i], ActualOutput[i]);
         }
-        cout<<"Empty String Test passed"<<endl;
+        MESSAGE("Empty String Test passed");
     }
+    
     TEST_CASE("Pattern Longer Than String Test")
     {
         KMP Obj;
@@ -90,7 +94,7 @@ TEST_SUITE("Correctness")
         for(int i = 0; i < EO.size(); i++)
             REQUIRE_EQ(EO[i], ActualOutput[i]);
         
-        cout<<"Pattern Longer Than String Test passed"<<endl;
+        MESSAGE("Pattern Longer Than String Test passed");
     }
 }
 
@@ -114,6 +118,6 @@ TEST_SUITE("Performance")
         for(int i = 0; i < EO.size(); i++)
             REQUIRE_EQ(EO[i], ActualOutput[i]);
         
-        cout<<"Performance Test Passed"<<endl;
+        MESSAGE("Performance Test Passed");
     }
 }

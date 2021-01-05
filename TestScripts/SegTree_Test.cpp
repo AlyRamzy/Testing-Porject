@@ -16,8 +16,9 @@ TEST_SUITE("Correctness")
         for(int i = 0; i < arr.size(); i++)
             REQUIRE_EQ(arr[i], Obj.GetMin(i,i));
 
-        cout<<"Segment Tree Build With Valid Array Test Passed"<<endl;
+        MESSAGE("Segment Tree Build With Valid Array Test Passed");
     }
+
     TEST_CASE("Segment Tree Build With Empty Array Test")
     {
         vector<int>arr;
@@ -25,8 +26,9 @@ TEST_SUITE("Correctness")
 
         REQUIRE_EQ(INT_MAX, Obj.GetMin(0,0));
 
-        cout<<"Segment Tree Build With Empty Array Test Passed"<<endl;
+        MESSAGE("Segment Tree Build With Empty Array Test Passed");
     }
+
     TEST_CASE("Segment Tree Update with Valid and Boundary Index Test")
     {
         vector<int>arr = {1,8,9,10,15,12,-1};
@@ -47,8 +49,9 @@ TEST_SUITE("Correctness")
             Obj.Update(6, -10);
             REQUIRE_EQ(-10, Obj.GetMin(6, 6));
         }
-        cout<<"Segment Tree Update with Valid and Boundary Index Test Passed"<<endl;
+        MESSAGE("Segment Tree Update with Valid and Boundary Index Test Passed");
     }
+
     TEST_CASE("Segment Tree Update with Invalid Index Test")
     {
         vector<int>arr = {1,8,9,10,15,12,-1};
@@ -68,8 +71,9 @@ TEST_SUITE("Correctness")
             for(int i = 0; i < arr.size(); i++)
                 CHECK_EQ(arr[i], Obj.GetMin(i,i));
         }
-        cout<<"Segment Tree Update with Invalid Index Test Passed"<<endl;
+        MESSAGE("Segment Tree Update with Invalid Index Test Passed");
     }
+
     TEST_CASE("Segment Tree Query with Multiple Valid Ranges Test")
     {
         vector<int>arr = {1,8,9,10,15,12,-1};
@@ -83,8 +87,9 @@ TEST_SUITE("Correctness")
         for(int i = 0; i < ranges.size(); i++)
             CHECK_EQ(answers[i], Obj.GetMin(ranges[i].first, ranges[i].second));
         
-        cout<<"Segment Tree Query with Multiple Valid Ranges Test"<<endl;
+        MESSAGE("Segment Tree Query with Multiple Valid Ranges Test");
     }
+
     TEST_CASE("Segment Tree Query with Multiple InValid Ranges Test")
     {
         vector<int>arr = {1,8,9,10,15,12,-1};
@@ -95,7 +100,7 @@ TEST_SUITE("Correctness")
         for(int i = 0; i < ranges.size(); i++)
             CHECK_EQ(INT_MAX, Obj.GetMin(ranges[i].first, ranges[i].second));
         
-        cout<<"Segment Tree Query with Multiple InValid Ranges Test"<<endl;
+        MESSAGE("Segment Tree Query with Multiple InValid Ranges Test");
     }
 }
 
@@ -109,7 +114,7 @@ TEST_SUITE("Performance")
         
         MinSegTree Obj(arr);
 
-        cout<<"Build Test Passed"<<endl;
+        MESSAGE("Build Performance Test Passed");
     }
 
     TEST_CASE("Test O(Log(n)) Segment Tree Update implementation")
@@ -127,7 +132,7 @@ TEST_SUITE("Performance")
         int t = end.count()-start.count();
         REQUIRE_LE(t, 5000);
 
-        cout<<"Update Test Passed"<<endl;
+        MESSAGE("Update Performance Test Passed");
     }
 
     TEST_CASE("Test O(Log(n)) Segment Tree Query implementation")
@@ -145,6 +150,6 @@ TEST_SUITE("Performance")
         int t = end.count()-start.count();
         REQUIRE_LE(t, 5000);
 
-        cout<<"Query Test Passed"<<endl;
+        MESSAGE("Query Performance Test Passed");
     }
 }
