@@ -3,9 +3,32 @@
 #include "../CodeFiles/MergeSort/MergeSort.h"
 #include "../Tool/doctest.h"
 #include <stdlib.h>
-
+void DO_ASSERSSIONS(int *arr1,int *arr2,int arr_size)
+{
+	for (int index = 0; index < arr_size; index++)
+	{
+		CAPTURE(index);
+		REQUIRE(arr1[index] == arr2[index]);
+	}
+	
+}
 TEST_SUITE("Correctness")
 {
+	TEST_CASE("Sort empty array and null pointer array")
+	{
+		int *arr = NULL;
+		SUBCASE("empty array")
+		{
+			arr=new int[0];
+			INFO("MergeSort : Failur in sort empty array");
+			CHECK_NOTHROW(mergeSort(arr, 0, -1));
+		}
+		
+		INFO("MergeSort : Failur in sort null pointer array");
+		CHECK_NOTHROW(mergeSort(arr, 0, -1));
+	}
+	
+
 	TEST_CASE("Sort array with even number of elements")
 	{
 		int arr[] = {12, 15, 23, 4, 6, 10, 35, 28};
@@ -13,24 +36,10 @@ TEST_SUITE("Correctness")
 
 		mergeSort(arr, 0, arr_size - 1);
 		int sortedArr[] = {4, 6, 10, 12, 15, 23, 28, 35};
-		for (int i = 0; i < arr_size; i++)
-		{
-			CHECK(sortedArr[i] == arr[i]);
-		}
+		INFO("MergeSort : Failur in sort array with even number of elements");
+		DO_ASSERSSIONS(arr,sortedArr,arr_size);
+		
 	}
-	TEST_CASE("Sort empty array")
-	{
-		int arr[] = {};
-
-		CHECK_NOTHROW(mergeSort(arr, 0, -1));
-	}
-
-	TEST_CASE("Sort null pointer array")
-	{
-		int *arr = NULL;
-		CHECK_NOTHROW(mergeSort(arr, 0, -1));
-	}
-
 	TEST_CASE("Sort already sorted array")
 	{
 		int arr[] = {4, 6, 10, 12, 15, 23, 28, 35};
@@ -38,13 +47,8 @@ TEST_SUITE("Correctness")
 
 		mergeSort(arr, 0, arr_size - 1);
 		int sortedArr[] ={4, 6, 10, 12, 15, 23, 28, 35};//{4, 5, 10, 3, 15, 23, 28, 35}; 
-		INFO("Failur in sort already sorted array");
-		for (int i = 0; i < arr_size; i++)
-		{
-			INFO("Failur in sort already sorted array", i);
-			CAPTURE(i);
-			CHECK(sortedArr[i] == arr[i]);
-		}
+		INFO("MergeSort : Failur in sort already sorted array");
+		DO_ASSERSSIONS(arr,sortedArr,arr_size);
 	}
 	TEST_CASE("Sort array with odd number of elements")
 	{
@@ -53,10 +57,9 @@ TEST_SUITE("Correctness")
 
 		mergeSort(arr, 0, arr_size - 1);
 		int sortedArr[] = {4, 6, 10, 12, 15, 23, 35};
-		for (int i = 0; i < arr_size; i++)
-		{
-			CHECK(sortedArr[i] == arr[i]);
-		}
+		INFO("MergeSort : Failur in sort array with odd number of elements");
+
+		DO_ASSERSSIONS(arr,sortedArr,arr_size);
 	}
 
 	TEST_CASE("Sort descending sorted array")
@@ -66,12 +69,10 @@ TEST_SUITE("Correctness")
 
 		mergeSort(arr, 0, arr_size - 1);
 		int sortedArr[] = {4, 6, 10, 12, 15, 23, 28, 35};
-		for (int i = 0; i < arr_size; i++)
-		{
-			//FAIL("fail the test case and also end it");
-    			//MESSAGE("never reached...");
-			CHECK(sortedArr[i] == arr[i]);
-		}
+
+		INFO("MergeSort : Failur in sort descending sorted array");
+
+		DO_ASSERSSIONS(arr,sortedArr,arr_size);
 	}
 
 	TEST_CASE("Sort one element array")
@@ -81,10 +82,10 @@ TEST_SUITE("Correctness")
 
 		mergeSort(arr, 0, arr_size - 1);
 		int sortedArr[] = {12};
+		INFO("MergeSort : Failur in sort one element array");
 		for (int i = 0; i < arr_size; i++)
 		{
-			//FAIL_CHECK("this should not end the test case, but mark it as failing");
-    			//MESSAGE("reached!");
+			CAPTURE(i);
 			CHECK(sortedArr[i] == arr[i]);
 		}
 	}
@@ -96,11 +97,10 @@ TEST_SUITE("Correctness")
 
 		mergeSort(arr, 0, arr_size - 1);
 		int sortedArr[] = {4, 12};
-		for (int i = 0; i < arr_size; i++)
-		{
-			
-			CHECK(sortedArr[i] == arr[i]);
-		}
+		INFO("MergeSort : Failur in sort two element array");
+		
+		DO_ASSERSSIONS(arr,sortedArr,arr_size);
+		
 	}
 
 	TEST_CASE("Sort array with negative elements")
@@ -110,10 +110,10 @@ TEST_SUITE("Correctness")
 
 		mergeSort(arr, 0, arr_size - 1);
 		int sortedArr[] = {-35, -23, -4, 6, 10, 12, 15, 28};
-		for (int i = 0; i < arr_size; i++)
-		{
-			CHECK(sortedArr[i] == arr[i]);
-		}
+		INFO("MergeSort : Failur in sort array with negative elements");
+		
+		DO_ASSERSSIONS(arr,sortedArr,arr_size);
+		
 	}
 
 	TEST_CASE("Sort array with duplicate elements")
@@ -123,10 +123,10 @@ TEST_SUITE("Correctness")
 
 		mergeSort(arr, 0, arr_size - 1);
 		int sortedArr[] = {-35, 4, 6, 6, 10, 12, 12, 23, 28};
-		for (int i = 0; i < arr_size; i++)
-		{
-			CHECK(sortedArr[i] == arr[i]);
-		}
+		INFO("MergeSort : Failur in sort array with duplicate elements");
+		
+		DO_ASSERSSIONS(arr,sortedArr,arr_size);
+		
 	}
 
 	TEST_CASE("Sort array with Same element")
@@ -136,10 +136,10 @@ TEST_SUITE("Correctness")
 
 		mergeSort(arr, 0, arr_size - 1);
 		int sortedArr[] = {12, 12, 12, 12, 12};
-		for (int i = 0; i < arr_size; i++)
-		{
-			CHECK(sortedArr[i] == arr[i]);
-		}
+		INFO("MergeSort : Failur in sort array with Same element");
+		
+		DO_ASSERSSIONS(arr,sortedArr,arr_size);
+		
 	}
 }
 
