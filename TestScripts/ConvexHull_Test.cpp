@@ -2,6 +2,7 @@
 
 #include "../CodeFiles/ConvexHull/convex_hull.h"
 #include "../Tool/doctest.h"
+#include <stdlib.h>
 
 TEST_SUITE("Correctness")
 {
@@ -108,12 +109,12 @@ TEST_SUITE("Correctness")
 
         SUBCASE("Four points")
         {
-            Point points[] = {{-3, 0}, {0, -3}, {0, 3}, {3, 0}};
+            Point points[] = {{1, 1}, {-3, 0}, {1, 0}, {0, 1}, {0, -3}, {0, 3}, {-1, 1}, {-1, -1}, {0, -1}, {3, 0}};
             int n = sizeof(points)/sizeof(points[0]); 
             vector<Point> hull; 
             hull = convexHull(points, n); 
 
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < convex_hull.size(); i++)
             {
                 CHECK(hull[i].x == convex_hull[i].x);
                 CHECK(hull[i].y == convex_hull[i].y);
@@ -124,16 +125,29 @@ TEST_SUITE("Correctness")
 
         SUBCASE("Five points")
         {
-            Point points[] = {{-3, 0}, {0, -3}, {0, 3}, {3, 0}, {-3,3}};
+            Point points[] = {{1, 1}, {-3, 0}, {1, 0}, {0, 1}, {0, -3}, {0, 3}, {-3, 3}, {-2, 2}, {-1, 1}, {-1, -1}, {0, -1}, {3, 0}};
             int n = sizeof(points)/sizeof(points[0]); 
             vector<Point> hull; 
             hull = convexHull(points, n); 
 
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < convex_hull.size(); i++)
             {
                 CHECK(hull[i].x == convex_hull[i].x);
                 CHECK(hull[i].y == convex_hull[i].y);
             }
         }
+    }
+}
+
+TEST_SUITE("Performance")
+{
+    TEST_CASE("Time Complexity: O(n^2) where n is the number of points." * doctest::timeout(0.2))
+    {
+        Point arr[] = {{1, 1}, {-3, 0}, {1, 0}, {0, 1}, {0, -3}, {0, 3}, {-3, 3}, {-2, 2}, {-1, 1}, {-1, -1}, {0, -1}, {3, 0}};
+        int size = sizeof(arr)/sizeof(arr[0]); 
+        
+        vector<Point> hull; 
+        hull = convexHull(arr, size); 
+        MESSAGE("ConvexHull performance test passed");
     }
 }

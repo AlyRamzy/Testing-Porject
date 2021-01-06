@@ -29,6 +29,13 @@ TEST CASE:  Time Complexity: O(logn) where n is the size of the sorted array.
 TestScripts/BinarySearch_Test.cpp:105: MESSAGE: Binary Search performance test passed
 
 ===============================================================================
+TestScripts/ConvexHull_Test.cpp:144:
+TEST SUITE: Performance
+TEST CASE:  Time Complexity: O(n^2) where n is the number of points.
+
+TestScripts/ConvexHull_Test.cpp:151: MESSAGE: ConvexHull performance test passed
+
+===============================================================================
 TestScripts/Dijkstra_Test.cpp:124:
 TEST SUITE: Performance
 TEST CASE:  Time Complexity: O(ElogV) where n is the size of the sorted array.
@@ -142,11 +149,11 @@ TEST CASE:  Test O(n^2) implementation
 TestScripts/LongestPalindromicSubstring_Test.cpp:64: MESSAGE: LPS Performance Test Passed
 
 ===============================================================================
-TestScripts/MergeSort_Test.cpp:145:
+TestScripts/MergeSort_Test.cpp:152:
 TEST SUITE: Performance
 TEST CASE:  Time Complexity: O(nlogn) where n is the size of the sorted array.
 
-TestScripts/MergeSort_Test.cpp:155: MESSAGE: Merge Sort Performance Test Passed
+TestScripts/MergeSort_Test.cpp:162: MESSAGE: Merge Sort Performance Test Passed
 
 ===============================================================================
 TestScripts/MinMax_Test.cpp:57:
